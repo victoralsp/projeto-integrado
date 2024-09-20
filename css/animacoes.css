@@ -1,0 +1,25 @@
+#article-login {
+    animation: articleEntrar 1.5s ease;
+}
+
+@keyframes articleEntrar {
+    from {
+        transform: translateX(-35vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#article-registrar {
+    animation: articleRegistrar 1.5s ease;
+}
+
+@keyframes articleRegistrar {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

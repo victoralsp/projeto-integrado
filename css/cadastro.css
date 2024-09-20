@@ -9,7 +9,7 @@
     --cor-preta: #000; /* Alterar quando decidirmos */
     --cor-branca: #fff; /* Alterar quando decidirmos */
     --cor-cinza: #bebebe; /* achar cinza claro */
-    --cor-bg-input: rgb(231, 231, 231); /* Alterar quando decidirmos */
+    --cor-bg-input: rgb(247, 247, 247); /* Alterar quando decidirmos */
 }
  
 body {
@@ -31,8 +31,27 @@ body {
     justify-content: center;
 }
 
+#momentaneoLogo {
+    margin-bottom: 7em;
+}
+
+#logo {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding: .1em;
+    letter-spacing: 10px;
+    font-weight: bolder;
+}
+
+#nomeProjeto {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: .8em;
+    letter-spacing: 2px;
+}
+
 .login-title {
-    font-size: 3.5em;
+    font-size: 3.2em;
     font-weight: bold;
 }
 
@@ -45,12 +64,18 @@ body {
 #btn-login {
     color: var(--cor-branca);
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-transform: uppercase;
     border: 1px solid var(--cor-branca);
-    padding: .5em 1em;
-    border-radius: 5px;
+    padding: .5em 2em;
+    border-radius: 100px;
     margin: 1em 0;
+}
+
+#btn-login:hover {
+    background-color: var(--cor-branca);
+    color: var(--cor-preta);
+    transition: 1s;
 }
 
 #article-registrar {
@@ -76,13 +101,54 @@ body {
 #paragrafo-login {
     align-self: center;
     font-size: 1.1em;
-    margin: .5em 0;
+    margin: .5em 0 3em 0;
+}
+
+#input-nome,
+#input-email,
+#input-senha {
+    width: 100%;
+    position: relative;
+}
+
+#input-nome i,
+#input-email i,
+#input-senha i {
+    width: 100%;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 #form-login input {
-    padding: 1em;
+    padding: 1.5em 4em;
     background-color: var(--cor-bg-input);
     border: none;
     margin: .5em 0;
-    z-index: 1;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    width: 100%;
+}
+
+#form-login input::placeholder {
+    font-size: 1.2em;
+}
+
+#btn-registrar {
+    padding: 1em 2em;
+    width: 50%;
+    margin: 1.5em auto 0;
+    background-color: var(--cor-preta);
+    color: var(--cor-branca);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+    border: none;
+}
+
+#btn-registrar:hover {
+    background-color: #353535;
+    transition: .5s;
 }
