@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fonte: Arial, sans-serif; /* Alterar quando decidirmos */
+    --cor-preta: #000; /* Alterar quando decidirmos */
+    --cor-branca: #fff; /* Alterar quando decidirmos */
+    --cor-cinza: #bebebe; /* achar cinza claro */
+    --cor-bg-input: rgb(231, 231, 231); /* Alterar quando decidirmos */
+}
+ 
+body {
+    font-family: var(--fonte);
+}
+
+#main {
+    display: flex;
+}
+
+#article-login {
+    background-color: var(--cor-preta);
+    color: var(--cor-branca);
+    width: 35vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-title {
+    font-size: 3.5em;
+    font-weight: bold;
+}
+
+#login-paragrafo {
+    font-weight: lighter;
+    margin: 1em 0;
+    color: var(--cor-cinza);
+}
+
+#btn-login {
+    color: var(--cor-branca);
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    border: 1px solid var(--cor-branca);
+    padding: .5em 1em;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+
+#article-registrar {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 500px;
+}
+
+#subtitulo-login {
+    align-self: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+#paragrafo-login {
+    align-self: center;
+    font-size: 1.1em;
+    margin: .5em 0;
+}
+
+#form-login input {
+    padding: 1em;
+    background-color: var(--cor-bg-input);
+    border: none;
+    margin: .5em 0;
+    z-index: 1;
+}
