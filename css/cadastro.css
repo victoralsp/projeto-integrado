@@ -5,9 +5,10 @@
 }
 
 :root {
+    --cor-principal: #3d4f65; /* Alterar quando decidirmos */
+    --cor-dark-bg: #191d2e;
+    --cor-branca: #f2f4f6; /* Alterar quando decidirmos */
     --fonte: Arial, sans-serif; /* Alterar quando decidirmos */
-    --cor-preta: #000; /* Alterar quando decidirmos */
-    --cor-branca: #fff; /* Alterar quando decidirmos */
     --cor-cinza: #bebebe; /* achar cinza claro */
     --cor-bg-input: rgb(247, 247, 247); /* Alterar quando decidirmos */
 }
@@ -20,8 +21,24 @@ body {
     display: flex;
 }
 
+#btnDarkMode {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--cor-branca);
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    transition: .5s;
+}
+
+#btnDarkMode:hover {
+    transform: scale(1.2) rotate(-20deg);
+}
+
 #article-login {
-    background-color: var(--cor-preta);
+    background-color: var(--cor-principal);
     color: var(--cor-branca);
     width: 35vw;
     height: 100vh;
@@ -74,7 +91,7 @@ body {
 
 #btn-login:hover {
     background-color: var(--cor-branca);
-    color: var(--cor-preta);
+    color: var(--cor-principal);
     transition: 1s;
 }
 
@@ -83,6 +100,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--cor-branca);
 }
 
 #form-login {
@@ -96,12 +114,14 @@ body {
     align-self: center;
     font-size: 3em;
     font-weight: bold;
+    color: var(--cor-principal);
 }
 
 #paragrafo-login {
     align-self: center;
     font-size: 1.1em;
     margin: .5em 0 3em 0;
+    color: var(--cor-principal);
 }
 
 #input-nome,
@@ -120,6 +140,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
+    color: var(--cor-principal);
 }
 
 #form-login input {
@@ -140,7 +161,7 @@ body {
     padding: 1em 2em;
     width: 50%;
     margin: 1.5em auto 0;
-    background-color: var(--cor-preta);
+    background-color: var(--cor-principal);
     color: var(--cor-branca);
     border-radius: 50px;
     cursor: pointer;

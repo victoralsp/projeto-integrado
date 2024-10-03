@@ -11,6 +11,9 @@
 <body>
     <main id="main">
         <article id="article-login">
+            <button id="btnDarkMode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
             <div id="momentaneoLogo">
                 <p id="logo">Logo futura</p>
                 <p id="nomeProjeto">Catevento</p>
@@ -25,20 +28,22 @@
                 <h2 id="subtitulo-login">Crie sua conta</h2>
                 <p id="paragrafo-login">Preencha seus dados</p>
                 <div id="input-nome">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user icones-input"></i>
                     <input type="text" id="nome" required placeholder="Nome">
                 </div>
                 <div id="input-email">
-                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-solid fa-envelope icones-input"></i>
                     <input type="email" id="email" required placeholder="Email">
                 </div>
                 <div id="input-senha">
-                    <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-lock icones-input"></i>
                     <input type="password" id="senha" required placeholder="Senha" minlength="6">
                 </div>
                 <button id="btn-registrar">Cadastrar</button>
             </form>
         </article>
     </main>
+
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>
