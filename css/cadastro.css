@@ -7,6 +7,8 @@
 :root {
     --cor-principal: #3d4f65; /* Alterar quando decidirmos */
     --cor-dark-bg: #191d2e;
+    --cor-icone-bg: #3d4f6534;
+    --cor-icone-bg-dark: #272d46;
     --cor-branca: #f2f4f6; /* Alterar quando decidirmos */
     --fonte: Arial, sans-serif; /* Alterar quando decidirmos */
     --cor-cinza: #bebebe; /* achar cinza claro */
@@ -105,16 +107,20 @@ body {
 }
 
 #icones-bg {
-    color: var(--cor-principal);
-    font-size: 1.8em;
+    color: #3d4f6534;
+    font-size: 3em;
 }
-
 
 #music {
     position: absolute;
     top: 200px;
     left: 200px;
     animation: moving 4s infinite alternate;
+    transition: 1s;
+}
+#music:hover {
+    rotate: 360deg;
+    translate: 40px -50px;
 }
 
 #ball {
@@ -122,25 +128,47 @@ body {
     bottom: 300px;
     right: 100px;
     animation: moving 4s infinite alternate;
+    transition: 1s;
 }
+#ball:hover {
+    rotate: 360deg;
+    translate: -40px -50px;
+}
+
 #mic {
     position: absolute;
     top: 200px;
     left: 200px;
     animation: moving 4s infinite alternate;
 }
+#mic:hover {
+    rotate: 360deg;
+    translate: -40px -50px;
+}
+
 #drink {
     position: absolute;
     bottom: 150px;
     left: 200px;
     animation: moving 4s infinite alternate;
+    transition: 1s;
 }
+#drink:hover {
+    scale: 1.3;
+    translate: 0 30px;
+}
+
 #control {
     position: absolute;
     top: 100px;
     right: 100px;
     animation: moving 4s infinite alternate;
+    transition: 1s;
 }
+#control:hover {
+    scale: 1.4;
+}
+
 @keyframes moving {
     0% {
         transform: rotate(15deg);

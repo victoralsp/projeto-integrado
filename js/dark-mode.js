@@ -14,8 +14,8 @@ btnDarkMode.addEventListener('click', () => {
         btnRegistrar.style.backgroundColor = 'var(--cor-branca)'
         btnRegistrar.style.color = 'var(--cor-principal)'
         subtituloLogin.style.color = 'var(--cor-branca)'
-        paragrafoLogin.style.color = 'var(--cor-branca)'
-        iconesBg.style.color = 'var(--cor-branca)'
+        paragrafoLogin.style.color = 'var(--cor-branca)' 
+        iconesBg.style.color = 'var(--cor-icone-bg-dark)'
         btnDarkMode.innerHTML = '<i class="fa-solid fa-sun"></i>'
     } else {
         articleRegistrar.style.backgroundColor = 'var(--cor-branca)'
@@ -24,7 +24,7 @@ btnDarkMode.addEventListener('click', () => {
         btnRegistrar.style.color = 'var(--cor-branca)'
         subtituloLogin.style.color = 'var(--cor-principal)'
         paragrafoLogin.style.color = 'var(--cor-principal)'
-        iconesBg.style.color = 'var(--cor-principal)'
+        iconesBg.style.color = 'var(--cor-icone-bg)'
         btnDarkMode.innerHTML = '<i class="fa-solid fa-moon"></i>'
     }
     color = !color
