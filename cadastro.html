@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se</title>
+    <title>Catevento | Cadastro</title>
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/animacoes.css">
+    <link rel="stylesheet" href="css/media-query.css">
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/png">
     <script src="https://kit.fontawesome.com/05ac79b2f0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -14,42 +16,35 @@
             <button id="btnDarkMode">
                 <i class="fa-solid fa-moon"></i>
             </button>
-            <div id="momentaneoLogo">
-                <p id="logo">Logo futura</p>
-                <p id="nomeProjeto">Catevento</p>
-            </div>
-            <h1 class="login-title">Bem-vindo</h1>
-            <h1 class="login-title">de volta.</h1>
-            <p id="login-paragrafo">Acesse sua conta agora mesmo</p>
+            <a href="#"><img src="imagens/logo.png" alt="logo catevento" id="logo" title="Voltar para a página principal."></a>
+            <h1 class="login-title">Já possui uma conta?</h1>
+            <p id="login-paragrafo">Acesse agora mesmo :)</p>
             <a href="#" id="btn-login">Entrar</a>
         </article>
         <article id="article-registrar">
-            <div id="icones-bg">
-                <i class="fa-solid fa-music" id="music"></i>
-                <i class="fa-solid fa-gamepad" id="control"></i>
-                <i class="fa-solid fa-futbol" id="ball"></i>
-                <i class="fa-solid fa-martini-glass-citrus" id="drink"></i>
-            </div>
-            <form id="form-login" method="">
+            <form action="Backcadastro.php" id="form-registro" method="POST">
                 <h2 id="subtitulo-login">Crie sua conta</h2>
                 <p id="paragrafo-login">Preencha seus dados</p>
                 <div id="input-nome">
                     <i class="fa-solid fa-user icones-input"></i>
-                    <input type="text" id="nome" required placeholder="Nome">
+                    <input type="text" name="nome" id="nome"  placeholder="Nome completo" required>
                 </div>
                 <div id="input-email">
                     <i class="fa-solid fa-envelope icones-input"></i>
-                    <input type="email" id="email" required placeholder="Email">
+                    <input type="email" name="Email" id="email"  placeholder="exemplo@gmail.com" required>
                 </div>
                 <div id="input-senha">
                     <i class="fa-solid fa-lock icones-input"></i>
-                    <input type="password" id="senha" required placeholder="Senha" minlength="6">
+                    <input type="password" name ="Senha" id="senha"  placeholder="Senha" minlength="6" autocomplete="on" required>
                 </div>
-                <button id="btn-registrar">Cadastrar</button>
+                <!-- <div id="input-senha">
+                    <i class="fa-solid fa-lock icones-input"></i>
+                    <input type="password" id="confirmar-senha"  placeholder="Confirme sua senha" minlength="6" autocomplete="on" required>
+                </div> -->
+                <button type="submit" id="btn-registrar">Cadastrar</button>
             </form>
         </article>
     </main>
-
     <script src="js/dark-mode.js"></script>
 </body>
 </html>

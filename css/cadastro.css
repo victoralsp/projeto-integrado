@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +7,16 @@
 }
 
 :root {
-    --cor-principal: #3d4f65; /* Alterar quando decidirmos */
-    --cor-dark-bg: #191d2e;
-    --cor-icone-bg: #3d4f6534;
-    --cor-icone-bg-dark: #272d46;
-    --cor-branca: #f2f4f6; /* Alterar quando decidirmos */
-    --fonte: Arial, sans-serif; /* Alterar quando decidirmos */
-    --cor-cinza: #bebebe; /* achar cinza claro */
-    --cor-bg-input: rgb(247, 247, 247); /* Alterar quando decidirmos */
+    --cor-principal: #005fba; 
+    --cor-dark-bg: #141414;
+    --cor-branca: #f2f4f6; 
+    --cor-cinza: #bebebe; 
+    --cor-bg-input: rgb(247, 247, 247); 
+    --fonte-principal: "Montserrat", sans-serif;
 }
  
 body {
-    font-family: var(--fonte);
+    font-family: var(--fonte-principal);
 }
 
 #main {
@@ -48,36 +48,26 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-#momentaneoLogo {
-    margin-bottom: 7em;
+    text-align: center;
 }
 
 #logo {
-    font-size: 2em;
-    text-transform: uppercase;
-    padding: .1em;
-    letter-spacing: 10px;
-    font-weight: bolder;
-}
-
-#nomeProjeto {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: .8em;
-    letter-spacing: 2px;
+    width: 150px;
+    background-color: var(--cor-branca);
+    border-radius: 50%;
 }
 
 .login-title {
     font-size: 3.2em;
     font-weight: bold;
+    line-height: 55px;
+    margin: .8em 0;
 }
 
 #login-paragrafo {
     font-weight: lighter;
     margin: 1em 0;
-    color: var(--cor-cinza);
+    color: var(--cor-branca);
 }
 
 #btn-login {
@@ -85,15 +75,25 @@ body {
     text-decoration: none;
     font-size: 1.2em;
     text-transform: uppercase;
-    border: 1px solid var(--cor-branca);
-    padding: .5em 2em;
-    border-radius: 100px;
-    margin: 1em 0;
+    position: relative;
+}
+
+#btn-login::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    left: 50%; 
+    transform: translateX(-50%) translateY(26px); 
+    background-color: var(--cor-branca);
+    transition: .5s ease;
+}
+
+#btn-login:hover::after {
+    width: 75px;
 }
 
 #btn-login:hover {
-    background-color: var(--cor-branca);
-    color: var(--cor-principal);
     transition: 1s;
 }
 
@@ -103,85 +103,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--cor-branca);
-    position: relative;
 }
 
-#icones-bg {
-    color: #3d4f6534;
-    font-size: 3em;
-}
-
-#music {
-    position: absolute;
-    top: 200px;
-    left: 200px;
-    animation: moving 4s infinite alternate;
-    transition: 1s;
-}
-#music:hover {
-    rotate: 360deg;
-    translate: 40px -50px;
-}
-
-#ball {
-    position: absolute;
-    bottom: 300px;
-    right: 100px;
-    animation: moving 4s infinite alternate;
-    transition: 1s;
-}
-#ball:hover {
-    rotate: 360deg;
-    translate: -40px -50px;
-}
-
-#mic {
-    position: absolute;
-    top: 200px;
-    left: 200px;
-    animation: moving 4s infinite alternate;
-}
-#mic:hover {
-    rotate: 360deg;
-    translate: -40px -50px;
-}
-
-#drink {
-    position: absolute;
-    bottom: 150px;
-    left: 200px;
-    animation: moving 4s infinite alternate;
-    transition: 1s;
-}
-#drink:hover {
-    scale: 1.3;
-    translate: 0 30px;
-}
-
-#control {
-    position: absolute;
-    top: 100px;
-    right: 100px;
-    animation: moving 4s infinite alternate;
-    transition: 1s;
-}
-#control:hover {
-    scale: 1.4;
-}
-
-@keyframes moving {
-    0% {
-        transform: rotate(15deg);
-      }
-      50% {
-        transform: rotate(-15deg);
-      }
-      100% {
-        transform: rotate(15deg);
-      } 
-    }
-
-#form-login {
+#form-registro {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -221,7 +145,7 @@ body {
     color: var(--cor-principal);
 }
 
-#form-login input {
+#form-registro input {
     padding: 1.5em 4em;
     background-color: var(--cor-bg-input);
     border: none;
@@ -229,9 +153,13 @@ body {
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.315);
     width: 100%;
+    outline: none;
+}
+#form-registro input:focus {
+    border-bottom: 2px solid var(--cor-principal);
 }
 
-#form-login input::placeholder {
+#form-registro input::placeholder {
     font-size: 1.2em;
 }
 
@@ -245,9 +173,9 @@ body {
     cursor: pointer;
     font-size: 1.2em;
     border: none;
+    transition: .5s;
 }
 
 #btn-registrar:hover {
-    background-color: #25303d;
-    transition: .5s;
+    background-color: #15325e !important;
 }
