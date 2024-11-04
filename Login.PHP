@@ -1,14 +1,3 @@
-<?php
-    require("conexao.php");
-    if(isset($_POST)){
-        $nome =$_POST['nome'];
-        $Email =$_POST['Email'];
-        $senha = $_POST['Senha'];
-        $query = "INSERT INTO user_events(Nome,Senha,Email) values ('$nome','$senha','$Email')";
-        $stmt =$pdo->Prepare($query);
-        $stmt->execute();
-    }
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,11 +14,10 @@
     <main id="main">
         <article id="article-login">
             <a href="#"><img src="imagens/logo.png" alt="logo catevento" id="logo" title="Voltar para a página principal."></a>
-            <h1 class="login-title">Cadastro efetuado corretamente</h1>
-            <p id="login-paragrafo">Acesse agora mesmo :)</p>
-            <a href="Cadastro.php" id="btn-login">Entrar</a>
+            <h1 class="login-title">Página ainda não está disponivel</h1>
+            <p id="login-paragrafo">Estamos trabalhando para tornar essa pagina acessivel :)</p>
+            <a href="Cadastro.php" id="btn-login">Voltar</a>
         </article>
     </main>
     <script src="js/dark-mode.js"></script>
 </body>
-</html>

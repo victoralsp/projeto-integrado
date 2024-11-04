@@ -19,7 +19,7 @@
             <a href="#"><img src="imagens/logo.png" alt="logo catevento" id="logo" title="Voltar para a página principal."></a>
             <h1 class="login-title">Já possui uma conta?</h1>
             <p id="login-paragrafo">Acesse agora mesmo :)</p>
-            <a href="#" id="btn-login">Entrar</a>
+            <a href="Login.php" id="btn-login">Entrar</a>
         </article>
         <article id="article-registrar">
             <form action="Backcadastro.php" id="form-registro" method="POST">
