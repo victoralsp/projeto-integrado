@@ -49,6 +49,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    z-index: 1;
 }
 
 #logo {
@@ -133,9 +134,9 @@ body {
     position: relative;
 }
 
-#input-nome i,
-#input-email i,
-#input-senha i {
+.iconeNome,
+.iconeEmail,
+.iconeSenha {
     width: 100%;
     position: absolute;
     left: 20px;
@@ -143,6 +144,29 @@ body {
     transform: translateY(-50%);
     pointer-events: none;
     color: var(--cor-principal);
+}
+
+.displayIcone {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    cursor: pointer;
+    color: var(--cor-principal);
+}
+
+#iconeVisualizarSenha {
+    opacity: 1;
+}
+#iconeVisualizarSenha.active {
+    opacity: 0;
+}
+
+#iconeEsconderSenha {
+    opacity: 0;
+    pointer-events: none;
+}
+#iconeEsconderSenha.active {
+    opacity: 1;
 }
 
 #form-registro input {
@@ -161,6 +185,14 @@ body {
 
 #form-registro input::placeholder {
     font-size: 1.2em;
+}
+
+#error-nome,
+#error-email,
+#error-senha {
+    color: rgb(214, 40, 40);
+    font-size: .8em;
+    display: none;
 }
 
 #btn-registrar {
