@@ -37,10 +37,6 @@
                     <i class="fa-solid fa-lock icones-input"></i>
                     <input type="password" name ="Senha" id="senha"  placeholder="Senha" minlength="6" autocomplete="on" required>
                 </div>
-                <!-- <div id="input-senha">
-                    <i class="fa-solid fa-lock icones-input"></i>
-                    <input type="password" id="confirmar-senha"  placeholder="Confirme sua senha" minlength="6" autocomplete="on" required>
-                </div> -->
                 <button type="submit" id="btn-registrar">Cadastrar</button>
             </form>
         </article>
