@@ -12,6 +12,7 @@
     --cor-branca: #f2f4f6; 
     --cor-cinza: #bebebe; 
     --cor-bg-input: rgb(247, 247, 247); 
+    --cor-bg-input-dark: rgb(32, 31, 31);
     --fonte-principal: "Montserrat", sans-serif;
 }
  
@@ -37,6 +38,24 @@ body {
 
 #btnDarkMode:hover {
     transform: scale(1.2) rotate(-20deg);
+}
+
+#voltar-pagina-principal {
+    color: var(--cor-branca);
+    text-decoration: none;
+    position: absolute;
+    top: 2.5em;
+    right: 2em;
+    transition: 1s ease;
+    display: flex;
+    align-items: center;
+}
+#voltar-pagina-principal:hover {
+    scale: 1.05;
+}
+
+#span-voltar {
+    padding-left: .5em;
 }
 
 #article-login {
