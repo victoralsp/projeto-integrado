@@ -1,5 +1,5 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js"
 
 
 const firebaseConfig = {
@@ -12,25 +12,43 @@ const firebaseConfig = {
 };
 
 // Inicializando o Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const app = initializeApp(firebaseConfig)
+const auth = getAuth(app)
 
-const loginButton = document.getElementById('login');
+const loginButton = document.getElementById('login')
 
 loginButton.addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
 
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
-        localStorage.setItem('user', JSON.stringify({ uid: user.uid, email: user.email }));
-        window.location.href = '../pages/perfil.html';
+        localStorage.setItem('user', JSON.stringify({ uid: user.uid, email: user.email }))
+        window.location.href = '../pages/perfil.html'
     })
     .catch((error) => {
-        const errorMessage = error.message;
-        alert(`Erro no login: ${errorMessage}`);
-    });
-});
+        const errorMessage = error.message
+        alert(`Erro no login: ${errorMessage}`)
+    })
+})
+
+
+// Visualizar senha
+const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha')
+const iconeEsconderSenha = document.getElementById('iconeEsconderSenha')
+const senha = document.getElementById('password')
+
+iconeVisualizarSenha.addEventListener('click', () => {
+    if (senha.type == 'password') {
+        senha.type = 'text'
+        iconeEsconderSenha.classList.add('active')
+        iconeVisualizarSenha.classList.add('active')
+    } else {
+        senha.type = 'password'
+        iconeEsconderSenha.classList.remove('active')
+        iconeVisualizarSenha.classList.remove('active')
+    }
+})

@@ -1,25 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --cor-principal: #005fba; 
-    --cor-dark-bg: #141414;
-    --cor-branca: #f2f4f6; 
-    --cor-cinza: #bebebe; 
-    --cor-bg-input: rgb(247, 247, 247); 
-    --cor-bg-input-dark: rgb(32, 31, 31);
-    --fonte-principal: "Montserrat", sans-serif;
-}
- 
-body {
-    font-family: var(--fonte-principal);
-}
-
 #main {
     display: flex;
 }
@@ -148,7 +126,8 @@ body {
 
 #input-nome,
 #input-email,
-#input-senha {
+#input-senha,
+#input-confirmar-senha {
     width: 100%;
     position: relative;
 }
@@ -188,6 +167,22 @@ body {
     opacity: 1;
 }
 
+#iconeVisualizarConfirmarSenha {
+    opacity: 1;
+}
+#iconeVisualizarConfirmarSenha.active {
+    opacity: 0;
+}
+
+#iconeEsconderConfirmarSenha {
+    opacity: 0;
+    pointer-events: none;
+}
+#iconeEsconderConfirmarSenha.active {
+    opacity: 1;
+}
+
+
 #form-registro input {
     padding: 1.5em 4em;
     background-color: var(--cor-bg-input);
@@ -208,7 +203,8 @@ body {
 
 #error-nome,
 #error-email,
-#error-senha {
+#error-senha,
+#error-confirmar-senha {
     color: rgb(214, 40, 40);
     font-size: .8em;
     display: none;

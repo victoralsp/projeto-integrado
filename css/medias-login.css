@@ -1,0 +1,76 @@
+@media only screen and (max-width: 480px) {
+    #article-login-usuarios h2 {
+        text-align: center;
+    }
+    main {
+        flex-direction: column;
+    }
+    #article-cadastro, #article-login-usuarios {
+        width: 100%;
+    }
+    #article-cadastro {
+        height: fit-content;
+        padding: 6em 2em 4em 2em;
+    }
+    #article-login-usuarios {
+        padding: 3em 2em 6em 2em;
+    }
+    #form-login {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #login {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+    #article-cadastro, #article-login-usuarios {
+        width: 100%;
+    }
+    #article-cadastro {
+        height: fit-content;
+        padding: 3em 2em;
+    }
+    #article-login-usuarios {
+        padding: 3em 0;
+    }
+    #form-login {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    main {
+    flex-direction: column;
+    }
+    #article-cadastro, #article-login-usuarios {
+        width: 100%;
+    }
+    #article-cadastro {
+        height: fit-content;
+        padding: 3em 2em;
+    }
+    #article-login-usuarios {
+        padding: 3em 0;
+    }
+    #form-login {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 1201px) {
+    #voltar-pagina-principal {
+        color: var(--cor-branca);
+    }
+}
+
+@media only screen and (min-width: 1650px) {
+    .cadastro-title {
+        max-width: 462px;
+    }
+}

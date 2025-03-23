@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #005fba; 
+    --cor-dark-bg: #141414;
+    --cor-branca: #f2f4f6; 
+    --cor-cinza: #bebebe; 
+    --cor-bg-input: rgb(247, 247, 247); 
+    --cor-bg-input-dark: rgb(32, 31, 31);
+    --fonte-principal: "Montserrat", sans-serif;
+}
+ 
+body {
+    font-family: var(--fonte-principal);
+}

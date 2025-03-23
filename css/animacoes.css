@@ -1,4 +1,4 @@
-#article-login {
+#article-login, #article-cadastro {
     animation: articleEntrar 1.5s ease;
 }
 
@@ -11,7 +11,7 @@
     }
 }
 
-#article-registrar {
+#article-registrar, #article-login-usuarios {
     animation: articleRegistrar 1.5s ease;
 }
 
