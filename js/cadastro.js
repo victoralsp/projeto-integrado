@@ -109,31 +109,31 @@ function validarFormulario() {
 function togglePasswordVisibility(input, iconeMostrar, iconeEsconder) {
     if (input.type === 'password') {
         input.type = 'text';
-        iconeEsconder.classList.add('active');
-        iconeMostrar.classList.add('active');
+        iconeEsconder.classList.add('active')
+        iconeMostrar.classList.add('active')
     } else {
         input.type = 'password';
-        iconeEsconder.classList.remove('active');
-        iconeMostrar.classList.remove('active');
+        iconeEsconder.classList.remove('active')
+        iconeMostrar.classList.remove('active')
     }
 }
 
 // Selecionando os elementos para "Senha"
-const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha');
-const iconeEsconderSenha = document.getElementById('iconeEsconderSenha');
-const senha = document.getElementById('password');
+const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha')
+const iconeEsconderSenha = document.getElementById('iconeEsconderSenha')
+const senha = document.getElementById('password')
 
 // Evento para alternar visibilidade da senha
 iconeVisualizarSenha.addEventListener('click', () => {
-    togglePasswordVisibility(senha, iconeVisualizarSenha, iconeEsconderSenha);
+    togglePasswordVisibility(senha, iconeVisualizarSenha, iconeEsconderSenha)
 });
 
 // Selecionando os elementos para "Confirmar Senha"
-const iconeVisualizarConfirmarSenha = document.getElementById('iconeVisualizarConfirmarSenha');
-const iconeEsconderConfirmarSenha = document.getElementById('iconeEsconderConfirmarSenha');
-const confirmarSenha = document.getElementById('confirmar-password');
+const iconeVisualizarConfirmarSenha = document.getElementById('iconeVisualizarConfirmarSenha')
+const iconeEsconderConfirmarSenha = document.getElementById('iconeEsconderConfirmarSenha')
+const confirmarSenha = document.getElementById('confirmar-password')
 
 // Evento para alternar visibilidade da senha de confirmação
 iconeVisualizarConfirmarSenha.addEventListener('click', () => {
-    togglePasswordVisibility(confirmarSenha, iconeVisualizarConfirmarSenha, iconeEsconderConfirmarSenha);
+    togglePasswordVisibility(confirmarSenha, iconeVisualizarConfirmarSenha, iconeEsconderConfirmarSenha)
 });
