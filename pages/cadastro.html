@@ -26,26 +26,27 @@
                 <p id="paragrafo-login" class="text-dark-mode">Preencha seus dados</p>
                 <div id="input-nome">
                     <i class="fa-solid fa-user icones-input iconeNome"></i>
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" class="inputs-dark-mode">
+                    <input type="text" name="nome" id="username" placeholder="Nome" class="inputs-dark-mode" required>
                     <p id="error-nome" class="paragrafo-erro-display">Preencha seu nome.</p>
                 </div>
                 <div id="input-email">
                     <i class="fa-solid fa-envelope icones-input iconeEmail"></i>
-                    <input type="email" name="Email" id="email" placeholder="exemplo@gmail.com" class="inputs-dark-mode">
+                    <input type="email" name="Email" id="email" placeholder="exemplo@gmail.com" class="inputs-dark-mode" required>
                     <p id="error-email" class="paragrafo-erro-display">Verifique se seu email foi preenchido corretamente.</p>  
                 </div>
                 <div id="input-senha">
                     <i class="fa-solid fa-lock icones-input iconeSenha"></i>
-                    <input type="password" name="Senha" id="senha" placeholder="Senha" minlength="6" autocomplete="on" class="inputs-dark-mode">
+                    <input type="password" name="Senha" id="password" placeholder="Senha" minlength="6" autocomplete="on" class="inputs-dark-mode" required>
                     <i class="fa-solid fa-eye displayIcone" id="iconeVisualizarSenha"></i>
                     <i class="fa-solid fa-eye-slash displayIcone" id="iconeEsconderSenha"></i>
                     <p id="error-senha" class="paragrafo-erro-display">Sua senha precisa ter no mínimo 6 caracteres.</p>                 
                 </div>
-                <button type="submit" id="btn-registrar">Cadastrar</button>
+                <button type="submit" id="btn-registrar" value="Cadastrar">Cadastrar</button>
             </form>
         </article>
     </main>
-    <script src="../js/dark-mode.js"></script>
-    <script src="../js/cadastro.js"></script>
+
+    <script type="module" src="/js/cadastro.js"></script>
+    <script src="/js/dark-mode.js"></script>
 </body>
 </html>

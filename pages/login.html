@@ -15,12 +15,28 @@
     <main id="main">
         <article id="article-login">
             <a href="#"><img src="../imagens/logo.png" alt="logo catevento" id="logo" title="Voltar para a página principal."></a>
-            <h1 class="login-title">Página em desenvolvimento</h1>
-            <p id="login-paragrafo">Estamos trabalhando para tornar essa pagina acessível :)</p>
-            <a href="../index.html" id="btn-login">Voltar</a>
+            <h1 class="login-title">Faça seu login</h1>
+            <form id="form-login">
+                <div id="input-email">
+                    <i class="fa-solid fa-envelope icones-input iconeEmail"></i>
+                    <input type="email" id="email" placeholder="exemplo@gmail.com" class="inputs-dark-mode" required>
+                </div>
+                <div id="input-senha">
+                    <i class="fa-solid fa-lock icones-input iconeSenha"></i>
+                    <input type="password" id="password" placeholder="Senha" class="inputs-dark-mode" required>
+                    <i class="fa-solid fa-eye" id="iconeVisualizarSenha"></i>
+                    <i class="fa-solid fa-eye-slash" id="iconeEsconderSenha"></i>
+                </div>
+                <button type="submit" id="login" value="Entrar">Entrar</button>
+            </form>
+            <p>Não tem uma conta?</p>
+            <p><a href="cadastro.html">Cadastre-se</a></p>
         </article>
         <article id="article-vetor">
             <img src="../imagens/dev-ilustracao.png" alt="ilustração de um site em desenvolvimento" id="ilustracao-web">
         </article>
     </main>
+
+    <script type="module" src="../js/login.js" defer></script>
 </body>
+</html>
