@@ -38,6 +38,11 @@ formLogin.addEventListener('submit', (event) => {
 })
 
 
+function validarFormulario(emailValue, passwordValue) {
+    
+}
+
+
 // Visualizar senha
 const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha')
 const iconeEsconderSenha = document.getElementById('iconeEsconderSenha')

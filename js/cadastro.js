@@ -57,7 +57,7 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
     const iconeNome = document.querySelector('#input-nome .icones-input')
     const iconeEmail = document.querySelector('#input-email .icones-input')
     const iconeSenha = document.querySelector('#input-senha .icones-input')
-    const teste = document.querySelector('#input-confirmar-senha .icones-input-confirmar')
+    const iconeConfirmarSenha = document.querySelector('#input-confirmar-senha .icones-input-confirmar')
     let isValid = true
 
     if (usernameValue == '') {
@@ -89,12 +89,13 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
 
     if (passwordValue != confirmarSenhaValue) {
         erroConfirmarSenha.style.display = 'block'
-        teste.style.transform = 'translateY(-15px)'
+        iconeConfirmarSenha.style.transform = 'translateY(-15px)'
         isValid = false
     } else {
         erroConfirmarSenha.style.display = 'none'
-        teste.style.transform = ''
+        iconeConfirmarSenha.style.transform = ''
     }
+
     return isValid
 }
 
