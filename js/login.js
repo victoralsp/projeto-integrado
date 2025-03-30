@@ -17,6 +17,7 @@ const auth = getAuth(app)
 const formLogin = document.getElementById('form-login')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
+const dadosIncorretos = document.getElementById('erro-dados-incorretos')
 let emailValue, passwordValue
 
 formLogin.addEventListener('submit', (event) => {
@@ -24,6 +25,8 @@ formLogin.addEventListener('submit', (event) => {
 
     emailValue = email.value.trim()
     passwordValue = password.value.trim()
+
+    if (!validarFormularioLogin(emailValue, passwordValue)) return
 
     signInWithEmailAndPassword(auth, emailValue, passwordValue)
     .then((userCredential) => {
@@ -33,13 +36,39 @@ formLogin.addEventListener('submit', (event) => {
     })
     .catch((error) => {
         const errorMessage = error.message
-        alert(`Erro no login: ${errorMessage}`)
+        console.log(`Erro no login: ${errorMessage}`)
+        dadosIncorretos.style.display = 'block'
     })
 })
 
 
-function validarFormulario(emailValue, passwordValue) {
-    
+function validarFormularioLogin(emailValue, passwordValue) {
+    const erroEmailLogin = document.getElementById('error-email-login')
+    const erroSenhaLogin = document.getElementById('error-senha-login')
+    let isValid = true
+
+    if (emailValue == '') {
+        erroEmailLogin.style.display = 'block'
+        isValid = false
+    } else {
+        erroEmailLogin.style.display = 'none'
+    }
+
+    if (passwordValue == '') {
+        erroSenhaLogin.style.display = 'block'
+        isValid = false
+    } else {
+        erroSenhaLogin.style.display = 'none'
+    }
+    if (passwordValue.length < 6) {
+        erroSenhaLogin.style.display = 'block'
+        erroSenhaLogin.textContent = 'Sua senha precisa ter no mínimo 6 caracteres.'
+        isValid = false
+    } else {
+        erroSenhaLogin.style.display = 'none'
+    }
+
+    return isValid
 }
 
 

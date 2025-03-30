@@ -209,14 +209,14 @@ main {
     width: 443px;
 }
 
-#article-login-usuarios h2 {
+#article-login-usuarios > h2 {
     font-size: 3em;
     font-weight: bold;
     color: var(--cor-principal);
     text-align: center;
 }
 
-#article-login-usuarios p {
+#article-login-usuarios > p {
     text-align: center;
     font-size: 1.1em;
     margin: .5em 0 3em 0;
@@ -267,11 +267,17 @@ main {
     font-size: 1.2em;
 }
 
-#error-nome,
-#error-email,
-#error-senha {
+#error-email-login,
+#error-senha-login {
     color: rgb(214, 40, 40);
     font-size: .8em;
+    display: none;
+}
+
+#erro-dados-incorretos {
+    color: rgb(214, 40, 40);
+    text-align: center;
+    margin-top: 1em;
     display: none;
 }
 

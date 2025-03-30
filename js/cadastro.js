@@ -78,8 +78,17 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
         erroEmail.style.display = 'none'
     }
 
-    if (passwordValue == '' || passwordValue.length < 6) {
+    if (passwordValue == '') {
         erroSenha.style.display = 'block'
+        iconeSenha.style.transform = 'translateY(-15px)'
+        isValid = false
+    } else {
+        erroSenha.style.display = 'none'
+        iconeSenha.style.transform = ''
+    }
+    if (passwordValue.length < 6) {
+        erroSenha.style.display = 'block'
+        erroSenha.textContent = 'Sua senha precisa ter no mínimo 6 caracteres.'
         iconeSenha.style.transform = 'translateY(-15px)'
         isValid = false
     } else {
