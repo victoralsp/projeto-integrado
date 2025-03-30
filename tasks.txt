@@ -1,0 +1,4 @@
+Alterar variaveis repetidas para escopo global
+Mudar função de login e cadastro para assíncrona
+Validar formulário de login
+Adicionar o spinner no login e cadastro

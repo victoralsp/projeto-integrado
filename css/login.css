@@ -187,7 +187,7 @@ main {
     font-size: 1.2em;
 }
 
-#login {
+#btnLogin {
     padding: 1em 2em;
     width: 50%;
     margin: 1.5em auto 0;
@@ -200,7 +200,7 @@ main {
     transition: .5s;
 }
 
-#login:hover {
+#btnLogin:hover {
     background-color: #15325e !important;
 }
 

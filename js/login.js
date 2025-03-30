@@ -9,21 +9,23 @@ const firebaseConfig = {
     storageBucket: "login-cadastro-72828.firebasestorage.app",
     messagingSenderId: "364332563538",
     appId: "1:364332563538:web:fc78156ad3f08a001bb38b"
-};
+}
 
-// Inicializando o Firebase
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 
-const loginButton = document.getElementById('login')
+const formLogin = document.getElementById('form-login')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+let emailValue, passwordValue
 
-loginButton.addEventListener('click', (event) => {
+formLogin.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
+    emailValue = email.value.trim()
+    passwordValue = password.value.trim()
 
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, emailValue, passwordValue)
     .then((userCredential) => {
         const user = userCredential.user;
         localStorage.setItem('user', JSON.stringify({ uid: user.uid, email: user.email }))
@@ -39,15 +41,14 @@ loginButton.addEventListener('click', (event) => {
 // Visualizar senha
 const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha')
 const iconeEsconderSenha = document.getElementById('iconeEsconderSenha')
-const senha = document.getElementById('password')
 
 iconeVisualizarSenha.addEventListener('click', () => {
-    if (senha.type == 'password') {
-        senha.type = 'text'
+    if (password.type == 'password') {
+        password.type = 'text'
         iconeEsconderSenha.classList.add('active')
         iconeVisualizarSenha.classList.add('active')
     } else {
-        senha.type = 'password'
+        password.type = 'password'
         iconeEsconderSenha.classList.remove('active')
         iconeVisualizarSenha.classList.remove('active')
     }

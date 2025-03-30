@@ -11,45 +11,45 @@ const firebaseConfig = {
     appId: "1:364332563538:web:fc78156ad3f08a001bb38b"
 }
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const db = getFirestore(app)
 
 const formRegistro = document.getElementById('form-registro')
-const submitButton = document.getElementById('btn-registrar')
+const username = document.getElementById('username')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
+const confirmarSenha = document.getElementById('confirmar-password')
+let usernameValue, emailValue, passwordValue, confirmarSenhaValue
 
-formRegistro.addEventListener('submit', function(e) {
-    e.preventDefault();
 
-    const username = document.getElementById('username').value.trim()
-    const email = document.getElementById('email').value.trim()
-    const password = document.getElementById('password').value.trim()
+formRegistro.addEventListener('submit', function(event) {
+    event.preventDefault()
 
-    if (!validarFormulario()) return
+    usernameValue = username.value.trim()
+    emailValue = email.value.trim()
+    passwordValue = password.value.trim()
+    confirmarSenhaValue = confirmarSenha.value.trim()
 
-    createUserWithEmailAndPassword(auth, email, password)
+    if (!validarFormulario(usernameValue, emailValue, passwordValue, confirmarSenhaValue)) return
+
+    createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
             const user = userCredential.user
             setDoc(doc(db, "users", user.uid), {
                 email: user.email,
-                displayName: username
+                displayName: usernameValue
             }).then(() => {
-                console.log("Redirecionando para a página perfil.html")
                 window.location.href = "../pages/perfil.html"
-            });
+            })
         })
         .catch((error) => {
-            const errorMessage = error.message;
-            alert(errorMessage);
-        });
-});
+            const errorMessage = error.message
+            console.log(errorMessage)
+        })
+})
 
-function validarFormulario() {
-    const nome = document.getElementById('username').value
-    const email = document.getElementById('email').value
-    const senha = document.getElementById('password').value
-    const confirmarSenha = document.getElementById('confirmar-password').value
+function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSenhaValue) {
     const erroNome = document.getElementById('error-nome')
     const erroEmail = document.getElementById('error-email')
     const erroSenha = document.getElementById('error-senha')
@@ -60,8 +60,7 @@ function validarFormulario() {
     const teste = document.querySelector('#input-confirmar-senha .icones-input-confirmar')
     let isValid = true
 
-    // Validação do nome
-    if (nome == '') {
+    if (usernameValue == '') {
         erroNome.style.display = 'block'
         iconeNome.style.transform = 'translateY(-15px)'
         isValid = false
@@ -70,18 +69,16 @@ function validarFormulario() {
         iconeNome.style.transform = ''
     }
 
-    // Validação do email
-    if (email == '') {
+    if (emailValue == '') {
         iconeEmail.style.transform = 'translateY(-15px)'
         erroEmail.style.display = 'block'
-        isValid = false;
+        isValid = false
     } else {
         iconeEmail.style.transform = ''
         erroEmail.style.display = 'none'
     }
 
-    // Validação da senha
-    if (senha == '' || senha.length < 6) {
+    if (passwordValue == '' || passwordValue.length < 6) {
         erroSenha.style.display = 'block'
         iconeSenha.style.transform = 'translateY(-15px)'
         isValid = false
@@ -90,50 +87,39 @@ function validarFormulario() {
         iconeSenha.style.transform = ''
     }
 
-    if (senha != confirmarSenha) {
+    if (passwordValue != confirmarSenhaValue) {
         erroConfirmarSenha.style.display = 'block'
         teste.style.transform = 'translateY(-15px)'
-        isValid = false;
+        isValid = false
     } else {
         erroConfirmarSenha.style.display = 'none'
         teste.style.transform = ''
     }
-
-    return isValid;
+    return isValid
 }
 
-
-
-
-// Função para alternar visibilidade da senha
 function togglePasswordVisibility(input, iconeMostrar, iconeEsconder) {
     if (input.type === 'password') {
-        input.type = 'text';
+        input.type = 'text'
         iconeEsconder.classList.add('active')
         iconeMostrar.classList.add('active')
     } else {
-        input.type = 'password';
+        input.type = 'password'
         iconeEsconder.classList.remove('active')
         iconeMostrar.classList.remove('active')
     }
 }
 
-// Selecionando os elementos para "Senha"
 const iconeVisualizarSenha = document.getElementById('iconeVisualizarSenha')
 const iconeEsconderSenha = document.getElementById('iconeEsconderSenha')
-const senha = document.getElementById('password')
 
-// Evento para alternar visibilidade da senha
 iconeVisualizarSenha.addEventListener('click', () => {
-    togglePasswordVisibility(senha, iconeVisualizarSenha, iconeEsconderSenha)
-});
+    togglePasswordVisibility(password, iconeVisualizarSenha, iconeEsconderSenha)
+})
 
-// Selecionando os elementos para "Confirmar Senha"
 const iconeVisualizarConfirmarSenha = document.getElementById('iconeVisualizarConfirmarSenha')
 const iconeEsconderConfirmarSenha = document.getElementById('iconeEsconderConfirmarSenha')
-const confirmarSenha = document.getElementById('confirmar-password')
 
-// Evento para alternar visibilidade da senha de confirmação
 iconeVisualizarConfirmarSenha.addEventListener('click', () => {
     togglePasswordVisibility(confirmarSenha, iconeVisualizarConfirmarSenha, iconeEsconderConfirmarSenha)
-});
+})
