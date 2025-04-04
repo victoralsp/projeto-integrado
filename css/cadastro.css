@@ -28,6 +28,7 @@
     display: flex;
     align-items: center;
 }
+
 #voltar-pagina-principal:hover {
     scale: 1.05;
 }
@@ -81,8 +82,8 @@
     position: absolute;
     height: 2px;
     width: 0px;
-    left: 50%; 
-    transform: translateX(-50%) translateY(26px); 
+    left: 50%;
+    transform: translateX(-50%) translateY(26px);
     background-color: var(--cor-branca);
     transition: .5s ease;
 }
@@ -155,6 +156,7 @@
 #iconeVisualizarSenha {
     opacity: 1;
 }
+
 #iconeVisualizarSenha.active {
     opacity: 0;
 }
@@ -163,6 +165,7 @@
     opacity: 0;
     pointer-events: none;
 }
+
 #iconeEsconderSenha.active {
     opacity: 1;
 }
@@ -170,6 +173,7 @@
 #iconeVisualizarConfirmarSenha {
     opacity: 1;
 }
+
 #iconeVisualizarConfirmarSenha.active {
     opacity: 0;
 }
@@ -178,6 +182,7 @@
     opacity: 0;
     pointer-events: none;
 }
+
 #iconeEsconderConfirmarSenha.active {
     opacity: 1;
 }
@@ -193,6 +198,7 @@
     width: 100%;
     outline: none;
 }
+
 #form-registro input:focus {
     border-bottom: 2px solid var(--cor-principal);
 }
@@ -225,4 +231,40 @@
 
 #btn-registrar:hover {
     background-color: #15325e !important;
+}
+
+#div-btn-spinner {
+    display: flex;
+    flex-direction: row;
+}
+
+#btnValue {
+    display: block;
+}
+
+#btnValue.active {
+    display: none;
+}
+
+#spinner {
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #fff 94%, #0000) top/9px 9px no-repeat,
+        conic-gradient(#0000 30%, #fff);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+    display: none;
+}
+
+#spinner.active {
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes spinner-c7wet2 {
+    100% {
+        transform: rotate(1turn);
+    }
 }

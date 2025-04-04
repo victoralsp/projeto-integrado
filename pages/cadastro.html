@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,15 @@
     <link rel="shortcut icon" href="imagens/logo.png" type="image/png">
     <script src="https://kit.fontawesome.com/05ac79b2f0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <main id="main">
         <article id="article-login">
             <button id="btnDarkMode"><i class="fa-solid fa-moon"></i></button>
-            <a href="../index.html" id="voltar-pagina-principal"><i class="fa-solid fa-arrow-left"></i><span id="span-voltar">Página principal</span></a>
-            <a href="#"><img src="../imagens/logo.png" alt="logo catevento" id="logo" title="Voltar para a página principal."></a>
+            <a href="../index.html" id="voltar-pagina-principal"><i class="fa-solid fa-arrow-left"></i><span
+                    id="span-voltar">Página principal</span></a>
+            <a href="#"><img src="../imagens/logo.png" alt="logo catevento" id="logo"
+                    title="Voltar para a página principal."></a>
             <h1 class="login-title">Já possui uma conta?</h1>
             <p id="login-paragrafo">Acesse agora mesmo :)</p>
             <a href="login.html" id="btn-login">Entrar</a>
@@ -32,31 +36,43 @@
                 </div>
                 <div id="input-email">
                     <i class="fa-solid fa-envelope icones-input iconeEmail"></i>
-                    <input type="email" name="Email" id="email" placeholder="exemplo@gmail.com" class="inputs-dark-mode">
-                    <p id="error-email" class="paragrafo-erro-display">Verifique se seu email foi preenchido corretamente.</p>  
+                    <input type="email" name="Email" id="email" placeholder="exemplo@gmail.com"
+                        class="inputs-dark-mode">
+                    <p id="error-email" class="paragrafo-erro-display">Verifique se seu email foi preenchido
+                        corretamente.</p>
                 </div>
                 <div id="input-senha">
                     <i class="fa-solid fa-lock icones-input iconeSenha"></i>
-                    <input type="password" name="Senha" id="password" placeholder="Senha" minlength="6" autocomplete="on" class="inputs-dark-mode">
+                    <input type="password" name="Senha" id="password" placeholder="Senha" minlength="6"
+                        autocomplete="on" class="inputs-dark-mode">
                     <i class="fa-solid fa-eye displayIcone" id="iconeVisualizarSenha" class="iconeVisualizarSenha"></i>
-                    <i class="fa-solid fa-eye-slash displayIcone" id="iconeEsconderSenha" class="iconeEsconderSenha"></i>
-                    <p id="error-senha" class="paragrafo-erro-display">Sua senha precisa ter no mínimo 6 caracteres.</p>                 
+                    <i class="fa-solid fa-eye-slash displayIcone" id="iconeEsconderSenha"
+                        class="iconeEsconderSenha"></i>
+                    <p id="error-senha" class="paragrafo-erro-display">Sua senha precisa ter no mínimo 6 caracteres.</p>
                 </div>
-                
+
                 <div id="input-confirmar-senha">
                     <i class="fa-solid fa-lock icones-input-confirmar iconeSenha"></i>
-                    <input type="password" name="Senha" id="confirmar-password" placeholder="Confirme sua senha" minlength="6" autocomplete="on" class="inputs-dark-mode">
-                    <i class="fa-solid fa-eye displayIcone" id="iconeVisualizarConfirmarSenha" class="iconeVisualizarSenha"></i>
-                    <i class="fa-solid fa-eye-slash displayIcone" id="iconeEsconderConfirmarSenha" class="iconeEsconderSenha"></i>
-                    <p id="error-confirmar-senha" class="paragrafo-erro-display">As senhas precisam ser iguais.</p>                 
+                    <input type="password" name="Senha" id="confirmar-password" placeholder="Confirme sua senha"
+                        minlength="6" autocomplete="on" class="inputs-dark-mode">
+                    <i class="fa-solid fa-eye displayIcone" id="iconeVisualizarConfirmarSenha"
+                        class="iconeVisualizarSenha"></i>
+                    <i class="fa-solid fa-eye-slash displayIcone" id="iconeEsconderConfirmarSenha"
+                        class="iconeEsconderSenha"></i>
+                    <p id="error-confirmar-senha" class="paragrafo-erro-display">As senhas precisam ser iguais.</p>
                 </div>
-                
-                <button type="submit" id="btn-registrar" value="Cadastrar">Cadastrar</button>
+
+                <div id="div-btn-spinner">
+                    <button type="submit" id="btn-registrar" value="Cadastrar"><span id="btnValue">Cadastrar</span>
+                        <div id="spinner"></div>
+                    </button>
+                </div>
             </form>
         </article>
     </main>
 
     <script type="module" src="../js/cadastro.js"></script>
-    <script src="../js/dark-mode.js"></script>
+    <script src="../js/dark-mode-cadastro.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 Alterar variaveis repetidas para escopo global / OK
+Validar formulário de login / OK
+Adicionar o spinner no login e cadastro / OK
 
 
-Validar formulário de login
 Mudar função de login e cadastro para assíncrona 
-Adicionar o spinner no login e cadastro
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagawryherhwtjh

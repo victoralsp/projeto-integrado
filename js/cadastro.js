@@ -20,19 +20,11 @@ const username = document.getElementById('username')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 const confirmarSenha = document.getElementById('confirmar-password')
+const btnValue = document.getElementById('btnValue')
+const spinner = document.getElementById('spinner')
 let usernameValue, emailValue, passwordValue, confirmarSenhaValue
 
-
-formRegistro.addEventListener('submit', function(event) {
-    event.preventDefault()
-
-    usernameValue = username.value.trim()
-    emailValue = email.value.trim()
-    passwordValue = password.value.trim()
-    confirmarSenhaValue = confirmarSenha.value.trim()
-
-    if (!validarFormulario(usernameValue, emailValue, passwordValue, confirmarSenhaValue)) return
-
+function registrarUsuario(emailValue, passwordValue) {
     createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
             const user = userCredential.user
@@ -45,8 +37,26 @@ formRegistro.addEventListener('submit', function(event) {
         })
         .catch((error) => {
             const errorMessage = error.message
+            spinner.classList.remove('active')
+            btnValue.classList.remove('active')
             console.log(errorMessage)
+            alert(errorMessage)
         })
+}
+
+formRegistro.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    usernameValue = username.value.trim()
+    emailValue = email.value.trim()
+    passwordValue = password.value.trim()
+    confirmarSenhaValue = confirmarSenha.value.trim()
+
+    spinner.classList.add('active')
+    btnValue.classList.add('active')
+
+    if (!validarFormulario(usernameValue, emailValue, passwordValue, confirmarSenhaValue)) return
+    registrarUsuario(emailValue, passwordValue)
 })
 
 function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSenhaValue) {
@@ -63,6 +73,8 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
     if (usernameValue == '') {
         erroNome.style.display = 'block'
         iconeNome.style.transform = 'translateY(-15px)'
+        spinner.classList.remove('active')
+        btnValue.classList.remove('active')
         isValid = false
     } else {
         erroNome.style.display = 'none'
@@ -71,6 +83,8 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
 
     if (emailValue == '') {
         iconeEmail.style.transform = 'translateY(-15px)'
+        spinner.classList.remove('active')
+        btnValue.classList.remove('active')
         erroEmail.style.display = 'block'
         isValid = false
     } else {
@@ -81,6 +95,8 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
     if (passwordValue == '') {
         erroSenha.style.display = 'block'
         iconeSenha.style.transform = 'translateY(-15px)'
+        spinner.classList.remove('active')
+        btnValue.classList.remove('active')
         isValid = false
     } else {
         erroSenha.style.display = 'none'
@@ -89,6 +105,8 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
     if (passwordValue.length < 6) {
         erroSenha.style.display = 'block'
         erroSenha.textContent = 'Sua senha precisa ter no mínimo 6 caracteres.'
+        spinner.classList.remove('active')
+        btnValue.classList.remove('active')
         iconeSenha.style.transform = 'translateY(-15px)'
         isValid = false
     } else {
@@ -99,6 +117,8 @@ function validarFormulario(usernameValue, emailValue, passwordValue, confirmarSe
     if (passwordValue != confirmarSenhaValue) {
         erroConfirmarSenha.style.display = 'block'
         iconeConfirmarSenha.style.transform = 'translateY(-15px)'
+        spinner.classList.remove('active')
+        btnValue.classList.remove('active')
         isValid = false
     } else {
         erroConfirmarSenha.style.display = 'none'

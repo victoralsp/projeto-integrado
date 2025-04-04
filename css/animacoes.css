@@ -1,4 +1,5 @@
-#article-login, #article-cadastro {
+#article-login,
+#article-cadastro {
     animation: articleEntrar 1.5s ease;
 }
 
@@ -6,12 +7,14 @@
     from {
         transform: translateX(-35vw);
     }
+
     to {
         transform: translateX(0);
     }
 }
 
-#article-registrar, #article-login-usuarios {
+#article-registrar,
+#article-login-usuarios {
     animation: articleRegistrar 1.5s ease;
 }
 
@@ -19,6 +22,7 @@
     from {
         transform: translateY(-100vh);
     }
+
     to {
         transform: translateY(0);
     }

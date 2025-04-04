@@ -7,7 +7,7 @@ btnDarkMode.addEventListener('click', () => {
     if (color) {
         articleRegistrar.style.backgroundColor = 'var(--cor-dark-bg)'
         articleRegistrar.style.color = 'var(--cor-branca)'
-        for(let i = 0; i < inputsDarkMode.length; i++) {
+        for (let i = 0; i < inputsDarkMode.length; i++) {
             inputsDarkMode[i].style.backgroundColor = `var(--cor-bg-input-dark)`
             inputsDarkMode[i].style.color = `var(--cor-bg-input)`
         }
@@ -15,7 +15,7 @@ btnDarkMode.addEventListener('click', () => {
     } else {
         articleRegistrar.style.backgroundColor = 'var(--cor-branca)'
         articleRegistrar.style.color = 'var(--cor-principal)'
-        for(let i = 0; i < inputsDarkMode.length; i++) {
+        for (let i = 0; i < inputsDarkMode.length; i++) {
             inputsDarkMode[i].style.backgroundColor = `var(--cor-bg-input)`
             inputsDarkMode[i].style.color = `var(--cor-bg-input-dark)`
         }

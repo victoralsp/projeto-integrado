@@ -1,7 +1,7 @@
 main {
     display: flex;
     align-items: center;
-    background-color: var(--cor-branca);   
+    background-color: var(--cor-branca);
 }
 
 #btnDarkMode {
@@ -31,6 +31,7 @@ main {
     display: flex;
     align-items: center;
 }
+
 #voltar-pagina-principal:hover {
     scale: 1.05;
 }
@@ -84,8 +85,8 @@ main {
     position: absolute;
     height: 2px;
     width: 0px;
-    left: 50%; 
-    transform: translateX(-50%) translateY(26px); 
+    left: 50%;
+    transform: translateX(-50%) translateY(26px);
     background-color: var(--cor-branca);
     transition: .5s ease;
 }
@@ -157,6 +158,7 @@ main {
 #iconeVisualizarSenha {
     opacity: 1;
 }
+
 #iconeVisualizarSenha.active {
     opacity: 0;
 }
@@ -165,6 +167,7 @@ main {
     opacity: 0;
     pointer-events: none;
 }
+
 #iconeEsconderSenha.active {
     opacity: 1;
 }
@@ -179,6 +182,7 @@ main {
     width: 100%;
     outline: none;
 }
+
 #form-registro input:focus {
     border-bottom: 2px solid var(--cor-principal);
 }
@@ -204,19 +208,27 @@ main {
     background-color: #15325e !important;
 }
 
+#bg-article-login {
+    margin: 0 auto;
+    width: 65%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
 #article-login-usuarios {
     margin: 0 auto;
     width: 443px;
 }
 
-#article-login-usuarios > h2 {
+#article-login-usuarios>h2 {
     font-size: 3em;
     font-weight: bold;
     color: var(--cor-principal);
     text-align: center;
 }
 
-#article-login-usuarios > p {
+#article-login-usuarios>p {
     text-align: center;
     font-size: 1.1em;
     margin: .5em 0 3em 0;
@@ -247,8 +259,6 @@ main {
     align-items: center;
 }
 
-
-
 #form-login input {
     padding: 1.5em 4em;
     background-color: var(--cor-bg-input);
@@ -259,6 +269,7 @@ main {
     width: 100%;
     outline: none;
 }
+
 #form-login input:focus {
     border-bottom: 2px solid var(--cor-principal);
 }
@@ -281,6 +292,19 @@ main {
     display: none;
 }
 
+#redefinir-senha {
+    font-size: .8em;
+    margin: .5em 0;
+    color: var(--cor-principal);
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+#redefinir-senha:hover {
+    color: #235c91;
+    text-decoration: underline;
+}
+
 #btn-registrar {
     padding: 1em 2em;
     width: 50%;
@@ -298,3 +322,43 @@ main {
     background-color: #15325e !important;
 }
 
+
+
+
+
+
+#div-btn-spinner {
+    display: flex;
+    flex-direction: row;
+}
+
+#btnValue {
+    display: block;
+}
+
+#btnValue.active {
+    display: none;
+}
+
+#spinner {
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #fff 94%, #0000) top/9px 9px no-repeat,
+        conic-gradient(#0000 30%, #fff);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+    display: none;
+}
+
+#spinner.active {
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes spinner-c7wet2 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
