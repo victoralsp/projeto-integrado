@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../css/postar-eventos.css">
   <title>Postar Evento</title>
 </head>
 <body>
@@ -13,15 +14,11 @@
     <input type="date" id="data" required /><br>
     <input type="text" id="local" placeholder="Local do evento" required /><br>
     
-    <input type="file" id="imagem" accept="image/*" required /><br>
+    <input type="file" id="imagem" accept="image/*" multiple required /><br>
     <img id="preview" style="display:none;" /><br>
 
     <button type="submit">Publicar</button>
   </form>
-
-
-  <div id="evento-publicado"></div>
-
   <script type="module" src="../js/postar-evento.js"></script>
 </body>
 </html>
