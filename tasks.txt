@@ -1,7 +1,3 @@
-Alterar variaveis repetidas para escopo global / OK
-Validar formulário de login / OK
-Adicionar o spinner no login e cadastro / OK
-
-
-Mudar função de login e cadastro para assíncrona 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaagawryherhwtjh
+cloud name: dirywq3hx
+api key: 872398487232174
+upload preset: 
