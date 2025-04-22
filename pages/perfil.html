@@ -17,8 +17,6 @@
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(45deg, #6a11cb, #2575fc);
-            /* Gradiente de azul suave */
-            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -54,7 +52,7 @@
             /* Cor suave para o destaque */
         }
 
-        button {
+        button, #link-postar-eventos {
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #2575fc;
@@ -67,6 +65,19 @@
 
         button:hover {
             background-color: #1e62d0;
+        }
+        #link-postar-eventos {
+            text-decoration: none;
+        }
+        .card-evento {
+            width: 600px;
+            border-radius: 10px;
+            padding: 1em;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 1em;
+        }
+        .card-evento img {
+            width: 400px;
         }
 
         /* Adicionando responsividade */
@@ -92,7 +103,13 @@
         <p>Nome: <span id="name">João Silva</span></p>
         <p>Email: <span id="email">joao@example.com</span></p>
     </div>
-    <button id="logoutBtn">Deslogar</button>
+    <aside>
+        <button id="logoutBtn">Deslogar</button>
+        <a href="postar-evento.html" id="link-postar-eventos" target="_blank">Postar eventos</a>
+    </aside>
+    <p>Eventos publicados por você:</p>
+    <div id="eventos-do-usuario"></div>
+
 
     <script type="module" src="../js/perfil.js"></script>
 </body>
