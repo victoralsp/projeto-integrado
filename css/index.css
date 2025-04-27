@@ -1,0 +1,151 @@
+header { 
+    background-color: var(--cor-branca);
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+}
+
+#section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: .5em 0;
+    max-width: 1000px;
+}
+
+
+#section-header img {
+    width: 60px;
+    border-radius: 50%;
+    padding: .2em;
+}
+
+#input-pesquisar-eventos {
+    padding: 1em 8em 1em 2em;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 50px;
+    border: 1px solid rgba(3, 74, 141, 0.24);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.171); */
+    box-shadow: 0 0 5px rgba(0, 96, 186, 0.171);
+    outline: none;
+    background-color: #f2f4f6;
+    transition: .5s ease;
+}
+
+#input-pesquisar-eventos:focus {
+    border: 1px solid var(--cor-principal);
+}
+
+#header-links {
+    display: flex;
+    align-items: center;
+}
+
+#header-links a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: .5s ease;
+}
+
+#header-links a:hover {
+    transform: scale(1.05);
+}
+
+#barra {
+    width: 1.5px;
+    height: 15px;
+    background-color: var(--cor-principal);
+    margin: 0 1em;
+}
+
+#icon-menu {
+    display: none;
+    font-size: 1.5em;
+    color: var(--cor-principal);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#banner-principal {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+
+#banner-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.719), rgba(0, 0, 0, 0.938));
+    z-index: 1;
+}
+
+#banner-principal h1 {
+    color: var(--cor-branca);
+    font-size: 4em;
+    width: 90%;
+    max-width: 700px;
+    line-height: 1em;
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.212);
+    position: relative;
+    margin: .8em 0;
+    z-index: 2;
+}
+
+#btns-links {
+    z-index: 2;
+}
+
+#btns-links a {
+    text-decoration: none;
+    padding: .6em 2em;
+    border-radius: 50px;
+    margin: 0 .5em;
+    transition: .5s ease;
+}
+
+#explorar-btn {
+    border: 1px solid var(--cor-branca);
+    background-color: var(--cor-branca);
+    color: black;
+}
+#explorar-btn:hover {
+    background-color: transparent;
+    color: var(--cor-branca);
+}
+
+#publicar-btn {
+    color: var(--cor-branca);
+    background-color: transparent;
+    border: 1px solid var(--cor-branca);
+}
+
+#publicar-btn:hover {
+    background-color: var(--cor-branca);
+    color: black;
+}
+
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
