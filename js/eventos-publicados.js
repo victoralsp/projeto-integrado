@@ -12,19 +12,19 @@ const firebaseConfig = {
   appId: "1:364332563538:web:fc78156ad3f08a001bb38b"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
 
 
-const listaEventos = document.getElementById('lista-eventos');
+const listaEventos = document.getElementById('lista-eventos')
 
 async function carregarEventos() {
   try {
-    const querySnapshot = await getDocs(collection(db, "postagens"));
-    listaEventos.innerHTML = ''; // Limpa antes de exibir
+    const querySnapshot = await getDocs(collection(db, "postagens"))
+    listaEventos.innerHTML = ''
 
     querySnapshot.forEach((doc) => {
-      const evento = doc.data();
+      const evento = doc.data()
 
       listaEventos.innerHTML += `
         <div class="evento">
@@ -37,8 +37,8 @@ async function carregarEventos() {
       `;
     });
   } catch (error) {
-    console.error("Erro ao carregar eventos:", error);
-    listaEventos.innerHTML = "<p>Erro ao carregar eventos.</p>";
+    console.error("Erro ao carregar eventos:", error)
+    listaEventos.innerHTML = "<p>Erro ao carregar eventos.</p>"
   }
 }
-carregarEventos();
+carregarEventos()

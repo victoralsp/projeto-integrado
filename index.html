@@ -15,13 +15,17 @@
     <header>
         <section id="section-header">
                 <a href="#">
-                    <img src="imagens/logo.png" alt="Logo Catevento">
+                    <img src="imagens/logo.png" alt="Logo Catevento" title="Catevento">
                 </a>
                 <input type="text" id="input-pesquisar-eventos" placeholder="Pesquisar eventos...">
                 <article id="header-links">
-                    <a href="pages/login.html" target="_blank" id="login">Login</a>
-                    <div id="barra"></div>
-                    <a href="pages/cadastro.html" target="_blank" id="cadastro">Cadastro</a>
+                    <nav id="header-nav">
+                        <ul>
+                            <li><a href="pages/login.html" target="_blank" id="login">Login</a></li>
+                            <li><div id="barra"></div></li>
+                            <li><a href="pages/cadastro.html" target="_blank" id="cadastro">Cadastro</a></li>
+                        </ul>
+                    </nav>
                 </article>
                 <button id="icon-menu"><i class="fa-solid fa-bars"></i></button>
             </section>
@@ -37,6 +41,41 @@
                 <a href="pages/postar-evento.html" id="publicar-btn">Publicar</a>
             </article>
         </section>
+
+        <section id="categorias">
+            <h2>Categorias</h2>
+            <div id="article-categorias-wrapper">
+              <button id="seta-esquerda" class="setas-slider"><i class="fa-solid fa-chevron-left"></i></button>
+          
+              <div id="article-categorias">
+                <a href="#" class="categorias-eventos"> 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS7AULJfajT4T-Z0cQz-nDeBCGLP2YHacnwg&s" alt="">
+                    <p>Esporte</p>
+                </a>
+                <a href="#" class="categorias-eventos"> 
+                    <img src="https://www.sesc-rs.com.br/wp-content/uploads/2017/07/Publico-Rock-Teatro-Palco-Show-M%C3%BAsica-Espetaculo-Arte-ArteSesc-Foto-Banco-Gratuito-Canva.jpg" alt="">
+                    <p>Show</p>
+                </a>
+                <a href="#" class="categorias-eventos"> 
+                    <img src="https://gogamers.gg/wp-content/uploads/2023/09/Thumb-SiteNovo-Industria-de-jogos-optimized.png" alt="">
+                    <p>Game</p>
+                </a>
+                <a href="#" class="categorias-eventos"> 
+                    <img src="https://blogeducacaofisica.com.br/wp-content/uploads/2019/07/guia-completo-de-corrida.png" alt="">
+                    <p>Corrida</p>
+                </a>  
+             
+              </div>
+          
+              <button id="seta-direita" class="setas-slider"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+          </section>
+          
+          
+          
+          
+          
+          
 
       
     </main>
