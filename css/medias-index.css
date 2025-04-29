@@ -1,3 +1,20 @@
+@media screen and (max-width: 1024px) {
+    #banner-principal h1 {
+        font-size: 3em;
+        width: 95%;
+        margin: 1em 0;
+    }
+
+    #seta-esquerda {
+        left: -50px; 
+    }
+    
+    #seta-direita {
+        right: -50px; 
+    }
+    
+}
+
 @media screen and (max-width: 768px) {
     #section-header {
         padding: 1em;
@@ -55,13 +72,27 @@
     #icon-menu {
         display: block;
     }
+
+    #article-categorias-wrapper {
+        max-width: 425px; 
+    }
 }
 
-@media screen and (max-width: 1024px) {
-    #banner-principal h1 {
-        font-size: 3em;
-        width: 95%;
-        margin: 1em 0;
+@media screen and (max-width: 550px) {
+    #seta-esquerda {
+        left: -15px; 
+    }
+    
+    #seta-direita {
+        right: -15px; 
+    }
+
+    #article-categorias-wrapper {
+        max-width: 380px; 
+    }
+
+    #article-categorias {
+        gap: .2em;
     }
 }
 
@@ -70,5 +101,21 @@
         font-size: 2em;
         width: 95%;
         margin: 1.5em 0;
+    }
+
+    #seta-esquerda {
+        left: -30px; 
+    }
+    
+    #seta-direita {
+        right: -30px; 
+    }
+
+    #article-categorias-wrapper {
+        max-width: 245px; 
+    }
+
+    #article-categorias {
+        gap: .2em;
     }
 }

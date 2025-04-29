@@ -208,6 +208,7 @@ header {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    filter: brightness(40%);
 }
 
 .setas-slider {
