@@ -4,24 +4,6 @@
     box-sizing: border-box;
 }
 
-#lista-eventos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1600px;
-    gap: .5em;
-}
-
-.evento {
-    background-color: var(--cor-branca);
-    border: 1px solid var(--cor-principal);
-    border-radius: 5px;
-    max-width: 600px;
-    padding: 1em;
-}
-
-.evento img {
-    max-width: 300px;
-    padding: 1em 0;
-    object-fit: cover; 
+main {
+    padding-top: 80px;
 }
