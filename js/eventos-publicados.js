@@ -26,26 +26,43 @@ async function carregarEventos() {
     querySnapshot.forEach((doc) => {
       const evento = doc.data()
 
-      listaEventos.innerHTML += `
+      listaEventos.innerHTML += 
+      `
         <div class="evento">
-        ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
-        <div class="infos-evento">
-          <p class="categoria">${evento.categoria}</p>
-          <h2 class="titulo">${evento.titulo}</h2>
-          <div class="data-e-horario">
-            <p class="data"><span class="strong-text">Data:</span> ${evento.data}</p>
-            <div class="barra"></div>
-            <p class="horario"><span class="strong-text">Horário:</span> ${evento.horario}</p>
+          ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
+          <div class="infos-evento">
+            <p class="categoria">${evento.categoria}</p>
+            <h2 class="titulo">${evento.titulo}</h2>
+            <div class="data-e-horario">
+              <p class="data"><span class="strong-text">Data:</span> ${evento.data}</p>
+              <div class="barra"></div>
+              <p class="horario"><span class="strong-text">Horário:</span> ${evento.horario}</p>
+            </div>
+            <p class="local"><span class="strong-text">Local:</span> ${evento.local}</p>
           </div>
-          <p class="local"><span class="strong-text">Local:</span> ${evento.local}</p>
-          </div>
-          </div>
-          `;
-          // <p>Descrição: ${evento.descricao}</p>  
-        });
+        </div>
+      `
+    });
+
+    const inputPesquisarEventos = document.getElementById('input-pesquisar-eventos');
+    const cardsEventos = document.querySelectorAll('.evento');
+    
+    inputPesquisarEventos.addEventListener('input', () => {
+      const filtroEventos = inputPesquisarEventos.value.toLowerCase();
+    
+      cardsEventos.forEach(cardEvento => {
+        const text = cardEvento.textContent.toLowerCase();
+        cardEvento.style.display = text.includes(filtroEventos) ? 'block' : 'none';
+      });
+    });
+    
+
+
   } catch (error) {
     console.error("Erro ao carregar eventos:", error)
     listaEventos.innerHTML = "<p>Erro ao carregar eventos.</p>"
   }
 }
 carregarEventos()
+
+
