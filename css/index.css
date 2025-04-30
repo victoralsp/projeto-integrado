@@ -6,6 +6,7 @@ header {
     background-color: var(--cor-branca);
     width: 100vw;
     position: fixed;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
     z-index: 9999;
 }
 

@@ -29,16 +29,20 @@ async function carregarEventos() {
       listaEventos.innerHTML += `
         <div class="evento">
         ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
-        <h2>${evento.titulo}</h2>
-        <p>Categoria: ${evento.categoria}</p>
-        <p>Data: ${evento.data}</p>
-        <p>Horário: ${evento.horario}</p>
-        <p>Local: ${evento.local}</p>
-        <p>Descrição: ${evento.descricao}</p>
-        
-        </div>
-      `;
-    });
+        <div class="infos-evento">
+          <p class="categoria">${evento.categoria}</p>
+          <h2 class="titulo">${evento.titulo}</h2>
+          <div class="data-e-horario">
+            <p class="data"><span class="strong-text">Data:</span> ${evento.data}</p>
+            <div class="barra"></div>
+            <p class="horario"><span class="strong-text">Horário:</span> ${evento.horario}</p>
+          </div>
+          <p class="local"><span class="strong-text">Local:</span> ${evento.local}</p>
+          </div>
+          </div>
+          `;
+          // <p>Descrição: ${evento.descricao}</p>  
+        });
   } catch (error) {
     console.error("Erro ao carregar eventos:", error)
     listaEventos.innerHTML = "<p>Erro ao carregar eventos.</p>"
