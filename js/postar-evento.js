@@ -37,10 +37,12 @@ onAuthStateChanged(auth, (user) => {
     const descricao = document.getElementById('descricao').value.trim();
     const data = document.getElementById('data').value;
     const local = document.getElementById('local').value.trim();
+    const categoria = document.getElementById('categoria').value.trim();
+    const horario = document.getElementById('horario').value;
     const imagemInput = document.getElementById('imagem');
     const file = imagemInput.files[0];
 
-    if (!titulo || !descricao || !data || !local || !file) {
+    if (!titulo || !descricao || !data || !local || !horario || !categoria || !file) {
       alert('Preencha todos os campos!');
       return;
     }
@@ -59,18 +61,33 @@ onAuthStateChanged(auth, (user) => {
       const dataCloudinary = await response.json();
       
       if (dataCloudinary.secure_url) {
-        const imagemUrl = dataCloudinary.secure_url; // URL da imagem no Cloudinary
+        const imagemUrl = dataCloudinary.secure_url;
 
         // Salvar o evento no Firestore com a URL da imagem
+        function formatarDataBrasileira(dataOriginal) {
+          const dataObj = new Date(dataOriginal);
+          const dia = String(dataObj.getDate()).padStart(2, '0');
+          const mes = String(dataObj.getMonth() + 1).padStart(2, '0'); // Janeiro é 0
+          const ano = dataObj.getFullYear();
+          return `${dia}/${mes}/${ano}`;
+        }
+        
+        // Exemplo de uso:
+        const dataFormatada = formatarDataBrasileira(data);
+        
+        // Depois salva no Firestore
         const docRef = await addDoc(collection(db, 'postagens'), {
           titulo,
           descricao,
-          data,
+          data: dataFormatada,
           local,
+          categoria,
+          horario,
           criadorUid: user.uid,
           criadoEm: serverTimestamp(),
-          imagemUrl: imagemUrl // Adiciona a URL da imagem no Firestore
+          imagemUrl: imagemUrl 
         });
+        
         
         alert('Evento publicado com sucesso!');
 
@@ -80,17 +97,23 @@ onAuthStateChanged(auth, (user) => {
           descricao,
           data,
           local,
+          categoria,
+          horario,
           imagemUrl
         };
+        
+        // console.log(evento)
 
-        const eventoContainer = document.getElementById('evento-publicado');
-        eventoContainer.innerHTML = `
-          <h3>${evento.titulo}</h3>
-          <p>${evento.descricao}</p>
-          <p>Data: ${evento.data}</p>
-          <p>Local: ${evento.local}</p>
-          <img src="${evento.imagemUrl}" alt="Imagem do evento">
-        `;
+        // const eventoContainer = document.getElementById('evento-publicado');
+        // eventoContainer.innerHTML = `
+        // <p>${evento.horario}</p>
+        //   <p>${evento.categoria}</>
+        //   <h3>${evento.titulo}</h3>
+        //   <p>${evento.descricao}</p>
+        //   <p>Data: ${evento.data}</p>
+        //   <p>Local: ${evento.local}</p>
+        //   <img src="${evento.imagemUrl}" alt="Imagem do evento">
+        // `;
 
         form.reset(); // Limpar o formulário
       } else {
@@ -103,6 +126,8 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 });
+
+
 
 
 

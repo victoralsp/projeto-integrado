@@ -28,11 +28,14 @@ async function carregarEventos() {
 
       listaEventos.innerHTML += `
         <div class="evento">
-          <h3>${evento.titulo}</h3>
-          <p>${evento.descricao}</p>
-          ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
-          <p><strong>Data:</strong> ${evento.data}</p>
-          <p><strong>Local:</strong> ${evento.local}</p>
+        ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
+        <h2>${evento.titulo}</h2>
+        <p>Categoria: ${evento.categoria}</p>
+        <p>Data: ${evento.data}</p>
+        <p>Horário: ${evento.horario}</p>
+        <p>Local: ${evento.local}</p>
+        <p>Descrição: ${evento.descricao}</p>
+        
         </div>
       `;
     });
