@@ -231,5 +231,142 @@ header {
     right: -100px; 
 }
 
+#eventos-recem-postados {
+    background-color: var(--cor-dark-bg);
+    padding: 5em 0;
+}
+
+#subtitulo-recem-postados {
+    color: var(--cor-branca);
+    font-size: 1.8em;
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+#ultimos-eventos-publicados {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    transition: 1s;
+}
+
+.evento {
+    width: 300px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.158);
+    border-radius: 10px;
+    background-color: var(--cor-branca);
+}
+
+.evento img {
+    max-width: 300px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px 8px 0 0;
+}
+
+.infos-evento {
+    padding: .5em 1em 1em 1em;
+}
+
+.infos-evento p {
+    /* font-size: .9em; */
+}
+
+.categoria {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .7em;
+    margin: .3em 0;
+}
+
+.titulo {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--cor-dark-bg);
+}
+
+.data-e-horario {
+    display: flex;
+    gap: .4em;
+    margin: .3em 0;
+    align-items: center;
+}
+
+.barra {
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+}
+
+.strong-text {
+    font-weight: bold;
+}
+
+#divulgue-seu-evento {
+    padding: 4em 0;
+}
+
+#subtitulo-divulgar-evento {
+    color: var(--cor-dark-bg);
+    font-size: 2em;
+    margin: 0 0 1em;
+    text-align: center;
+}
+
+#link-pagina-publicar {
+    display: block;
+    margin: 2em auto;
+    text-align: center;
+    color: var(--cor-branca);
+    background-color: var(--cor-dark-bg);
+    width: fit-content;
+    padding: 1em 2em;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid var(--cor-dark-bg);
+    transition: .5s ease;
+}
 
 
+#link-pagina-publicar:hover {
+    background-color: var(--cor-branca);
+    color: black;
+}
+
+#como-publicar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.158);
+    border-radius: 15px;
+    /* border: 1px solid red; */
+}
+
+#como-fazer {
+    max-width: 500px;
+}
+
+#como-fazer h3 {
+    font-size: 2em;
+    margin: .5em 0;
+}
+#como-fazer ol {
+    margin: 0 1em;
+}
+#como-fazer li {
+    padding: .2em 0;
+}
+
+#como-publicar img {
+    width: 100%;
+    max-width: 400px;
+}

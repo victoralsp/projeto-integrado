@@ -102,19 +102,6 @@ onAuthStateChanged(auth, (user) => {
           imagemUrl
         };
         
-        // console.log(evento)
-
-        // const eventoContainer = document.getElementById('evento-publicado');
-        // eventoContainer.innerHTML = `
-        // <p>${evento.horario}</p>
-        //   <p>${evento.categoria}</>
-        //   <h3>${evento.titulo}</h3>
-        //   <p>${evento.descricao}</p>
-        //   <p>Data: ${evento.data}</p>
-        //   <p>Local: ${evento.local}</p>
-        //   <img src="${evento.imagemUrl}" alt="Imagem do evento">
-        // `;
-
         form.reset(); // Limpar o formulário
       } else {
         alert('Erro ao fazer upload da imagem no Cloudinary');

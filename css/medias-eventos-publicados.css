@@ -1,20 +1,3 @@
-@media screen and (max-width: 1024px) {
-    #banner-principal h1 {
-        font-size: 3em;
-        width: 95%;
-        margin: 1em 0;
-    }
-
-    #seta-esquerda {
-        left: -50px; 
-    }
-    
-    #seta-direita {
-        right: -50px; 
-    }
-    
-}
-
 @media screen and (max-width: 768px) {
     #section-header {
         padding: 1em;
@@ -79,43 +62,49 @@
 }
 
 @media screen and (max-width: 550px) {
-    #seta-esquerda {
-        left: -15px; 
-    }
-    
-    #seta-direita {
-        right: -15px; 
+    #eventos-publicados {
+        margin: 3em 0;
     }
 
-    #article-categorias-wrapper {
-        max-width: 380px; 
+    #lista-eventos {
+        /* border: 1px solid red; */
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2em;
+        transition: 1s;
     }
 
-    #article-categorias {
-        gap: .2em;
+    .evento {
+        max-width: 300px;
+        width: 90%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
+        border-radius: 10px;
     }
-}
+    .evento img {
+        width: 100;
+        max-width: 300px;
+        aspect-ratio: 16/9;
+        border-radius: 10px 10px 0 0;
+    }
 
-@media screen and (max-width: 425px) {
-    #banner-principal h1 {
-        font-size: 2.5em;
+    #eventos-publicados h1 {
+        font-size: 2em;
         width: 95%;
-        margin: 1.5em 0;
+        margin: 1em auto;
     }
 
-    #seta-esquerda {
-        left: -30px; 
-    }
-    
-    #seta-direita {
-        right: -30px; 
+    .data-e-horario {
+        display: block;
+        gap: .4em;
+        margin: 0;
     }
 
-    #article-categorias-wrapper {
-        max-width: 245px; 
-    }
-
-    #article-categorias {
-        gap: .2em;
+    .barra {
+        display: none;
     }
 }
+

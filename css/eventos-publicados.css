@@ -8,8 +8,13 @@ main {
     padding-top: 80px;
 }
 
+#banner-principal1 img {
+    width: 100%;
+    height: fit-content;
+}
+
 #eventos-publicados {
-    margin: 4em;
+    margin: 4em 0;
 }
 
 #eventos-publicados h1 {
@@ -32,7 +37,7 @@ main {
 
 .evento {
     width: 300px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24) !important;
     border-radius: 10px;
 }
 .evento img {

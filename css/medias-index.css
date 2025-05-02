@@ -76,6 +76,11 @@
     #article-categorias-wrapper {
         max-width: 425px; 
     }
+
+    #como-publicar {
+        flex-direction: column;
+        gap: 2em;
+    }
 }
 
 @media screen and (max-width: 550px) {

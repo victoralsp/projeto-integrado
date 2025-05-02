@@ -1,3 +1,20 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+import { getFirestore, collection, serverTimestamp, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+// Configuração do Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDcqw47MmWmF2B7NtsAJ5FFu4VS4B5tAS4",
+  authDomain: "login-cadastro-72828.firebaseapp.com",
+  projectId: "login-cadastro-72828",
+  storageBucket: "login-cadastro-72828.firebasestorage.app",
+  messagingSenderId: "364332563538",
+  appId: "1:364332563538:web:fc78156ad3f08a001bb38b"
+};
+
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+
+
 const iconMenu = document.getElementById('icon-menu')
 const linksMenu = document.getElementById('header-links')
 let menuAberto = false
@@ -41,7 +58,6 @@ function moveCarrosselLeft() {
     }, 50);
 }
 
-// Adicionando os eventos das setas
 document.getElementById('seta-direita').addEventListener('click', () => {
     categorias.style.transform = 'translateX(-120px)';
     moveCarrosselRight();
@@ -51,3 +67,47 @@ document.getElementById('seta-esquerda').addEventListener('click', () => {
     categorias.style.transform = 'translateX(120px)';
     moveCarrosselLeft();
 });
+
+
+// Puxar 3 ultimos eventos publicados 
+const ultimasPublicacoes = document.getElementById('ultimos-eventos-publicados');
+
+async function carregarEventos() {
+  try {
+    const eventosQuery = query(
+      collection(db, "postagens"),
+      orderBy("criadoEm", "desc"),
+      limit(3)
+    );
+
+    const querySnapshot = await getDocs(eventosQuery);
+    ultimasPublicacoes.innerHTML = '';
+
+    querySnapshot.forEach((doc) => {
+      const evento = doc.data();
+
+      ultimasPublicacoes.innerHTML += 
+      `
+        <div class="evento">
+          ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
+          <div class="infos-evento">
+            <p class="categoria">${evento.categoria}</p>
+            <h2 class="titulo">${evento.titulo}</h2>
+            <div class="data-e-horario">
+              <p class="data"><span class="strong-text">Data:</span> ${evento.data}</p>
+              <div class="barra"></div>
+              <p class="horario"><span class="strong-text">Horário:</span> ${evento.horario}</p>
+            </div>
+            <p class="local"><span class="strong-text">Local:</span> ${evento.local}</p>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error("Erro ao carregar eventos:", error);
+    ultimasPublicacoes.innerHTML = "<p>Erro ao carregar eventos.</p>";
+  }
+}
+
+carregarEventos();
