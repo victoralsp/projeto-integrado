@@ -1,4 +1,8 @@
 @media screen and (max-width: 768px) {
+    main {
+        padding-top: 77px;
+    }
+
     #section-header {
         padding: 1em;
     }

@@ -60,14 +60,23 @@ async function carregarEventos() {
 
     const inputPesquisarEventos = document.getElementById('input-pesquisar-eventos');
     const cardsEventos = document.querySelectorAll('.evento');
+    const mensagemNenhumEvento = document.getElementById('mensagem-nenhum-evento'); 
     
     inputPesquisarEventos.addEventListener('input', () => {
       const filtroEventos = inputPesquisarEventos.value.toLowerCase();
+      let algumVisivel = false;
     
       cardsEventos.forEach(cardEvento => {
         const text = cardEvento.textContent.toLowerCase();
-        cardEvento.style.display = text.includes(filtroEventos) ? 'block' : 'none';
+        const deveMostrar = text.includes(filtroEventos);
+        cardEvento.style.display = deveMostrar ? 'block' : 'none';
+    
+        if (deveMostrar) {
+          algumVisivel = true;
+        }
       });
+    
+      mensagemNenhumEvento.style.display = algumVisivel ? 'none' : 'block';
     });
     
 
