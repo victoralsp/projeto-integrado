@@ -99,6 +99,12 @@
     #article-categorias {
         gap: .2em;
     }
+    
+    #footer {
+        flex-direction: column;
+        width: 90%;
+        gap: 2em;
+    }
 }
 
 @media screen and (max-width: 425px) {

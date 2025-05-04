@@ -369,4 +369,62 @@ header {
 #como-publicar img {
     width: 100%;
     max-width: 400px;
+    border-radius: 7px;
+}
+
+footer {
+    background-color: var(--cor-dark-bg);
+    padding: 2em 0;
+}
+
+#footer {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    justify-content: space-evenly;
+}
+
+footer img {
+    width: 80px;
+    background-color: var(--cor-branca);
+    border-radius: 50%;
+    padding: .5em;
+    display: block;
+}
+
+#nome-empresa {
+    text-decoration: none;
+    color: var(--cor-branca) !important;
+}
+#nome-empresa img {
+    margin-bottom: .5em;
+}
+
+#links-rapidos, 
+#contatos {
+    display: flex;
+    flex-direction: column;
+}
+#links-rapidos p, 
+#contatos p {
+    margin-bottom: .5em;
+}
+#links-rapidos a, 
+#contatos a {
+    text-decoration: none;
+    color: var(--cor-branca);
+    font-size: .9em;
+    padding: .1em;
+}
+
+#links-rapidos a:hover, 
+#contatos a:hover {
+    text-decoration: underline;
+}
+
+#nome-empresa,
+#links-rapidos p,
+#contatos p {
+    color: var(--cor-principal);
 }
