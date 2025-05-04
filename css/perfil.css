@@ -1,0 +1,139 @@
+main {
+    padding: 0 0 8em 0;
+}
+
+#bem-vindo {
+    background-color: var(--cor-dark-bg);
+    width: 100%;
+    padding: 2em 0;
+}
+
+#perfil {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-branca);
+    color: var(--cor-dark-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--cor-principal);
+    margin-bottom: 1.5em;
+    padding-top: 5em;
+}
+
+#profile {
+    background-color: var(--cor-branca);
+    padding: 2em;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.158);
+    border: 1px solid rgba(3, 74, 141, 0.1);
+    margin: 2em auto;
+}
+
+#profile p {
+    font-size: 1em;
+    margin: 1em;
+}
+
+#profile span {
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+aside {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+button, #link-postar-eventos {
+    padding: 0.8em 2em;
+    border-radius: 50px;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: .5s ease;
+}
+
+button:hover, #link-postar-eventos:hover {
+    background-color: transparent;
+    color: var(--cor-principal);
+    border: 1px solid var(--cor-principal);
+}
+
+#paragrafo-eventos {
+    margin: 3em 0 2em;
+    font-size: 1.5em;
+}
+
+#eventos-do-usuario {
+    /* border: 1px solid red; */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    transition: 1s;
+}
+
+.evento {
+    width: 300px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24) !important;
+    border-radius: 10px;
+}
+.evento img {
+    max-width: 300px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px 10px 0 0;
+}
+
+.infos-evento {
+    padding: .5em 1em 1em 1em;
+}
+
+.infos-evento p {
+    /* font-size: .9em; */
+}
+
+.categoria {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .7em;
+    margin: .3em 0;
+}
+
+.titulo {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.data-e-horario {
+    display: flex;
+    gap: .4em;
+    margin: .3em 0;
+    align-items: center;
+}
+
+.barra {
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+}
+
+.strong-text {
+    font-weight: bold;
+}

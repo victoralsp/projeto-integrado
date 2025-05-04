@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/postar-eventos.css">
-  <title>Postar Evento</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/medias-index.css">
+  <link rel="shortcut icon" href="../imagens/logo.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/05ac79b2f0.js" crossorigin="anonymous"></script>
+  <title>Catevento | Postar Evento</title>
 </head>
-<body>
-  <h1>Postar Evento</h1>
-  <form id="form-evento">
-    <input type="text" id="titulo" placeholder="Título do evento" required /><br>
-    <textarea id="descricao" placeholder="Descrição do evento" required></textarea><br>
-    <input type="date" id="data" required /><br>
-    <input type="text" id="local" placeholder="Local do evento" required /><br>
-    <input type="text" id="categoria" placeholder="Categoria" required /><br>
-    <input type="time" name="" id="horario">
-    
-    <input type="file" id="imagem" accept="image/*" multiple required /><br>
-    <img id="preview" style="display:none;" /><br>
 
-    <button type="submit">Publicar</button>
-  </form>
+<body>
+  <header>
+    <section id="section-header">
+      <a href="../index.html">
+        <img src="../imagens/logo.png" alt="Logo Catevento" title="Catevento">
+      </a>
+      <input type="text" id="input-pesquisar-eventos" placeholder="Pesquisar eventos...">
+      <article id="header-links">
+        <nav id="header-nav">
+          <ul>
+            <li><a href="../pages/login.html" target="_blank" id="login">Login</a></li>
+            <li>
+              <div id="barra"></div>
+            </li>
+            <li><a href="../pages/cadastro.html" target="_blank" id="cadastro">Cadastro</a></li>
+          </ul>
+        </nav>
+      </article>
+      <button id="icon-menu"><i class="fa-solid fa-bars"></i></button>
+    </section>
+  </header>
+
+  <main>
+    <section>
+      <h1>Postar Evento</h1>
+      <form id="form-evento">
+        <input type="text" id="titulo" placeholder="Título do evento" required /><br>
+        <textarea id="descricao" placeholder="Descrição do evento" required></textarea><br>
+        <input type="date" id="data" required /><br>
+        <input type="text" id="local" placeholder="Local do evento" required /><br>
+        <input type="text" id="categoria" placeholder="Categoria" required /><br>
+        <input type="time" name="" id="horario">
+        <input type="file" id="imagem" accept="image/*" multiple required /><br>
+        <img id="preview" style="display:none;" /><br>
+        <button type="submit">Publicar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <section id="footer">
+      <a href="#" id="nome-empresa"><img src="../imagens/logo.png" alt="Logo catevento">
+        <p>Catevento</p>
+      </a>
+      <article id="links-rapidos">
+        <p>Links rápidos</p>
+        <a href="../pages/cadastro.html">Cadastro</a>
+        <a href="../pages/login.html">Login</a>
+        <a href="../pages/eventos-publicados.html">Eventos publicados</a>
+        <a href="../pages/perfil.html">Perfil</a>
+        <a href="../pages/postar-evento.html">Postar evento</a>
+      </article>
+      <article id="contatos">
+        <p>Contato</p>
+        <a href="mailto:catevento@gmail.com">catevento@gmail.com</a>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </article>
+    </section>
+  </footer>
   <script type="module" src="../js/postar-evento.js"></script>
 </body>
+
 </html>

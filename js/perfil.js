@@ -46,13 +46,19 @@ onAuthStateChanged(auth, async (user) => {
       querySnapshot.forEach((doc) => {
         const evento = doc.data();
         const eventoHTML = `
-          <div class="card-evento">
-            <h3>${evento.titulo}</h3>
-            <p>${evento.descricao}</p>
-            ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
-            <p><strong>Data:</strong> ${evento.data}</p>
-            <p><strong>Local:</strong> ${evento.local}</p>
+       <div class="evento">
+          ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
+          <div class="infos-evento">
+            <p class="categoria">${evento.categoria}</p>
+            <h2 class="titulo">${evento.titulo}</h2>
+            <div class="data-e-horario">
+              <p class="data"><span class="strong-text">Data:</span> ${evento.data}</p>
+              <div class="barra"></div>
+              <p class="horario"><span class="strong-text">Horário:</span> ${evento.horario}</p>
+            </div>
+            <p class="local"><span class="strong-text">Local:</span> ${evento.local}</p>
           </div>
+        </div>
         `;
         eventosContainer.innerHTML += eventoHTML;
       });
