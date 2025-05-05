@@ -1,9 +1,56 @@
 main {
-    padding: 8em;
+    padding: 8em 0;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+#postar-eventos h1 {
+    text-align: center;
+    margin: 0 0 1.5em 0;
+}
+
+#form-evento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: .8em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
+    padding: 2em;
+    border-radius: 10px;
+}
+textarea {
+    padding: 1em;
+    height: 10em;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    outline: none;
+    box-shadow: 0 0 5px #0060ba2d;
+}
+#form-evento input {
+    padding: .8em 1em;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 5px #0060ba2d;
+    outline: none;
+}
+
+textarea:focus,
+#form-evento input:focus {
+    border: 1px solid var(--cor-principal);
+}
+
+#btn-publicar {
+    background-color: var(--cor-principal);
+    padding: 1.2em;
+    cursor: pointer;
+    border: 1px solid var(--cor-principal);
+    border-radius: 50px;
+    color: var(--cor-branca);
+    margin: 1.5em 0;
+    transition: .5s ease;
+}
+
+#btn-publicar:hover {
+    background-color: #003f7a;
 }

@@ -62,7 +62,7 @@ button, #link-postar-eventos {
     border-radius: 50px;
     background-color: var(--cor-principal);
     color: var(--cor-branca);
-    border: none;
+    border: 1px solid var(--cor-principal);
     cursor: pointer;
     font-size: 1em;
     text-decoration: none;
@@ -89,6 +89,7 @@ button:hover, #link-postar-eventos:hover {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
+    text-align: left;
     transition: 1s;
 }
 

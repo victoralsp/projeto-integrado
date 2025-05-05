@@ -36,19 +36,35 @@
   </header>
 
   <main>
-    <section>
+    <section id="postar-eventos">
       <h1>Postar Evento</h1>
       <form id="form-evento">
-        <input type="text" id="titulo" placeholder="Título do evento" required /><br>
-        <textarea id="descricao" placeholder="Descrição do evento" required></textarea><br>
-        <input type="date" id="data" required /><br>
-        <input type="text" id="local" placeholder="Local do evento" required /><br>
-        <input type="text" id="categoria" placeholder="Categoria" required /><br>
-        <input type="time" name="" id="horario">
-        <input type="file" id="imagem" accept="image/*" multiple required /><br>
-        <img id="preview" style="display:none;" /><br>
-        <button type="submit">Publicar</button>
+        <label for="titulo">Título do evento:</label>
+        <input type="text" id="titulo" placeholder="Título do evento" required />
+      
+        <label for="descricao">Descrição do evento:</label>
+        <textarea id="descricao" placeholder="Descrição do evento" required></textarea>
+      
+        <label for="data">Data do evento:</label>
+        <input type="date" id="data" required />
+      
+        <label for="local">Local do evento:</label>
+        <input type="text" id="local" placeholder="Local do evento" required />
+      
+        <label for="categoria">Categoria:</label>
+        <input type="text" id="categoria" placeholder="Categoria" required />
+      
+        <label for="horario">Horário do evento:</label>
+        <input type="time" id="horario" />
+      
+        <label for="imagem">Imagem do evento:</label>
+        <input type="file" id="imagem" accept="image/*" multiple required />
+      
+        <img id="preview" style="display:none;" />
+      
+        <button type="submit" id="btn-publicar">Publicar</button>
       </form>
+      
     </section>
   </main>
 
