@@ -39,10 +39,9 @@ async function carregarEventos() {
 
     querySnapshot.forEach((doc) => {
       const evento = doc.data()
-
       listaEventos.innerHTML += 
       `
-        <div class="evento">
+        <div class="evento"  data-aos="zoom-in" data-aos-duration="700" data-aos-once="true">
           ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
           <div class="infos-evento">
             <p class="categoria">${evento.categoria}</p>

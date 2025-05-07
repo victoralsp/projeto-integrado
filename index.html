@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/medias-index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/05ac79b2f0.js" crossorigin="anonymous"></script>
     <title>Catevento | Home</title>
 </head>
-
 <body>
     <header>
         <section id="section-header">
@@ -36,7 +36,7 @@
             <video autoplay loop muted plays-inline class="back-video"> 
                 <source src="imagens/463637_Glass_Clinking_1920x1080.mp4" type="video/mp4">
             </video>
-            <h1>Encontre e divulgue os melhores eventos da região</h1>
+            <h1 data-aos="zoom-in" >Encontre e divulgue os melhores eventos da região</h1>
             <article id="btns-links">
                 <a href="pages/eventos-publicados.html" id="explorar-btn">Explorar</a>
                 <a href="pages/postar-evento.html" id="publicar-btn">Publicar</a>
@@ -49,19 +49,19 @@
               <button id="seta-esquerda" class="setas-slider"><i class="fa-solid fa-chevron-left"></i></button>
           
               <div id="article-categorias">
-                <a href="pages/eventos-publicados.html" class="categorias-eventos"> 
+                <a href="pages/eventos-publicados.html" class="categorias-eventos" data-aos="fade-up"> 
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS7AULJfajT4T-Z0cQz-nDeBCGLP2YHacnwg&s" alt="">
-                    <p>Esporte</p>
+                    <p >Esporte</p>
                 </a>
-                <a href="pages/eventos-publicados.html" class="categorias-eventos"> 
+                <a href="pages/eventos-publicados.html" class="categorias-eventos" data-aos="fade-up"> 
                     <img src="https://www.sesc-rs.com.br/wp-content/uploads/2017/07/Publico-Rock-Teatro-Palco-Show-M%C3%BAsica-Espetaculo-Arte-ArteSesc-Foto-Banco-Gratuito-Canva.jpg" alt="">
                     <p>Show</p>
                 </a>
-                <a href="pages/eventos-publicados.html" class="categorias-eventos"> 
+                <a href="pages/eventos-publicados.html" class="categorias-eventos" data-aos="fade-up"> 
                     <img src="https://gogamers.gg/wp-content/uploads/2023/09/Thumb-SiteNovo-Industria-de-jogos-optimized.png" alt="">
                     <p>Game</p>
                 </a>
-                <a href="pages/eventos-publicados.html" class="categorias-eventos"> 
+                <a href="pages/eventos-publicados.html" class="categorias-eventos" data-aos="fade-up"> 
                     <img src="https://blogeducacaofisica.com.br/wp-content/uploads/2019/07/guia-completo-de-corrida.png" alt="">
                     <p>Corrida</p>
                 </a>  
@@ -79,7 +79,7 @@
           <section id="divulgue-seu-evento">
             <h2 id="subtitulo-divulgar-evento">Divulgue seu evento</h2>
             <a href="pages/postar-evento.html" id="link-pagina-publicar">Comece de graça</a>
-            <article id="como-publicar">
+            <article id="como-publicar" data-aos="fade-up" data-aos-duration="600">
                 <div id="como-fazer">
                     <h3>Como fazer?</h3>
                     <ol>
@@ -114,6 +114,9 @@
     </footer>
 
     <script type="module" src="js/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
-
 </html>
