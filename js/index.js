@@ -109,7 +109,7 @@ async function carregarEventos() {
 
       ultimasPublicacoes.innerHTML += 
       `
-        <div class="evento"  data-aos="flip-left" data-aos-duration="1000">
+        <div class="evento">
           ${evento.imagemUrl ? `<img src="${evento.imagemUrl}" alt="Imagem do evento">` : ''}
           <div class="infos-evento">
             <p class="categoria">${evento.categoria}</p>
