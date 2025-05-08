@@ -46,9 +46,10 @@ main {
     border-radius: 10px;
 }
 .evento img {
+    object-fit: cover;
+    object-position: center;
     max-width: 300px;
     width: 100%;
-    aspect-ratio: 16/9;
     border-radius: 10px 10px 0 0;
 }
 
