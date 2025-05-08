@@ -30,6 +30,27 @@ iconMenu.addEventListener('click', ()=> {
     menuAberto = !menuAberto
 })
 
+// validação de user autenticado (header) 
+const navUserLogado = document.getElementById('header-nav-logado')
+const navUserDeslogado = document.getElementById('header-nav')
+
+onAuthStateChanged(auth, async (user) => {
+
+  const userDocRef = doc(db, "users", user.uid);
+  const docSnapshot = await getDoc(userDocRef);
+  const userData = docSnapshot.data();
+
+  if (!user) {
+      navUserDeslogado.style.display = 'block';
+      navUserLogado.style.display = 'none';
+  } else {
+      navUserDeslogado.style.display = 'none';
+      navUserLogado.style.display = 'block';
+      navUserLogado.innerHTML += `Olá, ${userData.displayName}`
+  }
+});
+
+
 const username = document.getElementById('name');
 const email = document.getElementById('email');
 const logoutBtn = document.getElementById('logoutBtn');

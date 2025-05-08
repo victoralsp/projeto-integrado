@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, serverTimestamp, getDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -13,6 +13,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig)
+const auth = getAuth(app)
 const db = getFirestore(app)
 
 const iconMenu = document.getElementById('icon-menu')
@@ -29,6 +30,27 @@ iconMenu.addEventListener('click', ()=> {
     }
     menuAberto = !menuAberto
 })
+
+// validação de user autenticado (header) 
+const navUserLogado = document.getElementById('header-nav-logado')
+const navUserDeslogado = document.getElementById('header-nav')
+
+onAuthStateChanged(auth, async (user) => {
+
+  const userDocRef = doc(db, "users", user.uid);
+  const docSnapshot = await getDoc(userDocRef);
+  const userData = docSnapshot.data();
+
+  if (!user) {
+      navUserDeslogado.style.display = 'block';
+      navUserLogado.style.display = 'none';
+  } else {
+      navUserDeslogado.style.display = 'none';
+      navUserLogado.style.display = 'block';
+      navUserLogado.innerHTML += `Olá, ${userData.displayName}`
+  }
+});
+
 
 const listaEventos = document.getElementById('lista-eventos')
 

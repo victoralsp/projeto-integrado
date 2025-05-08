@@ -54,7 +54,6 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 
-
 // carrossel de categorias 
 const categorias = document.getElementById('article-categorias');
 

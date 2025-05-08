@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, serverTimestamp, getDocs } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, serverTimestamp, getDocs, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -30,6 +30,26 @@ iconMenu.addEventListener('click', ()=> {
     }
     menuAberto = !menuAberto
 })
+
+// validação de user autenticado (header) 
+const navUserLogado = document.getElementById('header-nav-logado')
+const navUserDeslogado = document.getElementById('header-nav')
+
+onAuthStateChanged(auth, async (user) => {
+
+  const userDocRef = doc(db, "users", user.uid);
+  const docSnapshot = await getDoc(userDocRef);
+  const userData = docSnapshot.data();
+
+  if (!user) {
+      navUserDeslogado.style.display = 'block';
+      navUserLogado.style.display = 'none';
+  } else {
+      navUserDeslogado.style.display = 'none';
+      navUserLogado.style.display = 'block';
+      navUserLogado.innerHTML += `Olá, ${userData.displayName}`
+  }
+});
 
 // URL do seu endpoint do Cloudinary
 const cloudinaryUrl = "https://api.cloudinary.com/v1_1/dirywq3hx/image/upload";
