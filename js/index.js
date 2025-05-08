@@ -53,7 +53,6 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-
 // carrossel de categorias 
 const categorias = document.getElementById('article-categorias');
 
@@ -88,6 +87,36 @@ document.getElementById('seta-esquerda').addEventListener('click', () => {
     categorias.style.transform = 'translateX(120px)';
     moveCarrosselLeft();
 });
+
+// seção categorias dos eventos 
+let categoriasEventos = [
+  {
+    "imgCategoria": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS7AULJfajT4T-Z0cQz-nDeBCGLP2YHacnwg&s",
+    "paragrafoCategoria": "Esporte"
+  },
+  {
+    "imgCategoria": "https://www.sesc-rs.com.br/wp-content/uploads/2017/07/Publico-Rock-Teatro-Palco-Show-M%C3%BAsica-Espetaculo-Arte-ArteSesc-Foto-Banco-Gratuito-Canva.jpg",
+    "paragrafoCategoria": "Show"
+  },
+  {
+    "imgCategoria": "https://gogamers.gg/wp-content/uploads/2023/09/Thumb-SiteNovo-Industria-de-jogos-optimized.png",
+    "paragrafoCategoria": "Game"
+  },
+  {
+    "imgCategoria": "https://blogeducacaofisica.com.br/wp-content/uploads/2019/07/guia-completo-de-corrida.png",
+    "paragrafoCategoria": "Corrida"
+  }
+]
+
+categoriasEventos.forEach((categoriaEvento) => {
+  categorias.innerHTML += 
+    `
+      <a href="pages/eventos-publicados.html" class="categorias-eventos" data-aos="fade-up" data-aos-duration="800">
+        <img src="${categoriaEvento.imgCategoria}" alt="">
+        <p>${categoriaEvento.paragrafoCategoria}</p>
+     </a>
+    `
+})
 
 
 // Puxar 3 ultimos eventos publicados 
