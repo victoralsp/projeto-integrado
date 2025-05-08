@@ -43,6 +43,21 @@ header {
     border: 1px solid var(--cor-principal);
 }
 
+#header-nav-logado {
+    display: none;
+}
+
+#icone-user {
+    padding: 0 .5em;
+}
+
+#header-nav-logado a {
+    font-size: 1.3em;
+    color: var(--cor-principal);
+}
+#header-nav {
+    display: block;
+}
 #header-nav a {
     color: var(--cor-principal);
     text-decoration: none;

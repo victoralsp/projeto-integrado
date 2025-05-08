@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-import { getFirestore, collection, serverTimestamp, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+import { getFirestore, collection, serverTimestamp, getDocs, getDoc, doc, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -12,6 +13,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig)
+const auth = getAuth(app)
 const db = getFirestore(app)
 
 
@@ -31,10 +33,31 @@ iconMenu.addEventListener('click', ()=> {
 })
 
 
+// validação de user autenticado (header) 
+const navUserLogado = document.getElementById('header-nav-logado')
+const navUserDeslogado = document.getElementById('header-nav')
 
+onAuthStateChanged(auth, async (user) => {
+
+  const userDocRef = doc(db, "users", user.uid);
+  const docSnapshot = await getDoc(userDocRef);
+  const userData = docSnapshot.data();
+
+  if (!user) {
+      navUserDeslogado.style.display = 'block';
+      navUserLogado.style.display = 'none';
+  } else {
+      navUserDeslogado.style.display = 'none';
+      navUserLogado.style.display = 'block';
+      navUserLogado.innerHTML += `Olá, ${userData.displayName}`
+  }
+});
+
+
+
+// carrossel de categorias 
 const categorias = document.getElementById('article-categorias');
 
-// Função para mover o carrossel para a direita
 function moveCarrosselRight() {
     const primeiro = categorias.firstElementChild;
     categorias.appendChild(primeiro);
@@ -46,7 +69,6 @@ function moveCarrosselRight() {
     }, 50);
 }
 
-// Função para mover o carrossel para a esquerda
 function moveCarrosselLeft() {
     const ultimo = categorias.lastElementChild;
     categorias.prepend(ultimo);
